@@ -1,0 +1,56 @@
+import { Injectable } from '@angular/core';
+
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Comment } from '../../classes/comment/comment';
+import { Observable } from 'rxjs/internal/Observable';
+import { tap, map, catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
+
+import { MessageService } from '../message/message.service';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class CommentService {
+
+  private commentUrl = 'someUrl' //TODO: add url to backend.
+  
+  httpOptions = {
+    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  };
+
+  constructor( 
+    private http: HttpClient,
+    private messageService: MessageService
+  ) { }
+
+
+  private handleError<T> (operation = 'operation', result?: T) {
+    return (error: any): Observable<T> => {
+  
+      // TODO: send the error to remote logging infrastructure
+      console.error(error); // log to console instead
+  
+      // TODO: better job of transforming error for user consumption
+      this.log(`${operation} failed: ${error.message}`);
+  
+      // Let the app keep running by returning an empty result.
+      return of(result as T);
+    };
+  }
+  private log(message: string) {
+    this.messageService.add(`HeroService: ${message}`);
+  }
+
+  getComments(): Observable<Comment[]> {
+    return this.http.get<Comment[]>(this.commentUrl)
+  }
+
+  addComment(comment: Comment): Observable<Comment> {
+    return this.http.post<Comment>(this.commentUrl, comment, this.httpOptions).pipe(
+      tap((newComment: Comment) => this.log(`added comment =${newComment}`)),
+      catchError(this.handleError<Comment>('addComment'))
+    );
+
+  }
+}
