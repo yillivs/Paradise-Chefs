@@ -6,7 +6,7 @@
         <input type="text" required class="form-control" id="name" name="fname" placeholder="Your name." [(ngModel)]="model.name">
         <label for="u_comments">Comments</label>
         <textarea id="u_comments" required name="user_comments" placeholder="Comments." rows="10" cols="40"  [(ngModel)]="model.comment"></textarea>
-        <input type="submit" (click)="add(model); model.name=''; model.comment=''" value="Submit">
+        <input type="submit" (click)="add(model)" value="Submit">
       </div>
     </form>
   </div>

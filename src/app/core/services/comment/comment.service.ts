@@ -13,7 +13,7 @@ import { MessageService } from '../message/message.service';
 })
 export class CommentService {
 
-  private commentUrl = 'someUrl' //TODO: add url to backend.
+  private commentUrl = 'https://us-central1-paradise-chefs-47fe0.cloudfunctions.net'
   
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -39,7 +39,7 @@ export class CommentService {
     };
   }
   private log(message: string) {
-    this.messageService.add(`HeroService: ${message}`);
+    this.messageService.add(`CommentService: ${message}`);
   }
 
   getComments(): Observable<Comment[]> {
@@ -47,7 +47,7 @@ export class CommentService {
   }
 
   addComment(comment: Comment): Observable<Comment> {
-    return this.http.post<Comment>(this.commentUrl, comment, this.httpOptions).pipe(
+    return this.http.post<Comment>(`${this.commentUrl}/postComment`, comment, this.httpOptions).pipe(
       tap((newComment: Comment) => this.log(`added comment =${newComment}`)),
       catchError(this.handleError<Comment>('addComment'))
     );
