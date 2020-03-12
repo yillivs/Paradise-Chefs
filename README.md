@@ -1,6 +1,6 @@
-# Frontend
+# Paradise Chefs
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
+Web-application hosted currently at www.inhousechef.org
 
 ## Development server
 
