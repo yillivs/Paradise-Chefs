@@ -1,19 +1,19 @@
 export class Comment {
     constructor(
-        public name: String,
-        public comment: String){
+        public name: string,
+        public comment: string){
     }
 
-    setName(string: String){
-        this.name = string;
+    setName(n: string){
+        this.name = n;
     }
 
     getName(){
         return this.name;
     }
 
-    setComment(string: String){
-        this.comment = string;
+    setComment(c: string){
+        this.comment = c;
     }
 
     getComment(){

@@ -13,7 +13,7 @@ import { MessageService } from '../message/message.service';
 })
 export class CommentService {
 
-  private commentUrl = 'https://us-central1-paradise-chefs-47fe0.cloudfunctions.net'
+  private commentUrl = 'https://us-central1-paradise-chefs-47fe0.cloudfunctions.net/comments';
   
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })

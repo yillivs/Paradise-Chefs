@@ -1,18 +1,33 @@
 const functions = require('firebase-functions');
-
+const express = require('express');
 const admin = require('firebase-admin');
-const app = admin.initializeApp();
-const db = admin.firestore();
+const app = express();
 
-exports.postComment =  functions.https.onRequest((req,res) =>{
-    db.collection("Comments").add({name: req.body.name, comment: req.body.comment})
-    .then(function(docRef) 
-    {
-        console.log("Document written with ID: ", docRef.id);
-        return res;
-    })
-    .catch(function(error) 
-    {
-        console.error("Error adding document: ", error);
+admin.initializeApp();
+
+const firestore = admin.firestore();
+
+
+const cors = require('cors');
+
+
+// Automatically allow cross-origin requests
+app.use(cors({ origin: true }));
+
+
+app.get('/comments', (req, res) => {
+    let commentRef = firestore.collection('Comment');
+    let allComments = citiesRef.get()
+  .then(snapshot => {
+        snapshot.forEach(doc => {
+      console.log(doc.id, '=>', doc.data());
     });
+    res.send(snapshot);
+  })
+  .catch(err => {
+      res.send('Error getting documents', err);
+  });
+
 });
+
+exports.api = functions.https.onRequest(app);

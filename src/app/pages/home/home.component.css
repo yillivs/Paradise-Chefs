@@ -1,11 +1,10 @@
 /**
 * Controls carousel size
 */
-.carousel-inner > .carousel-item{
-  height: 40em;
- }
+
+
  
- .carousel-caption{
+.carousel-caption{
   color: black;
   font-family: 'Prata', serif;
   background-color: white;
@@ -14,10 +13,10 @@
   border-width: .2em;
  }
 
- h1{
+h1{
    font-size: 1.7em
- }
+}
 
- p{
+p{
    font-size: 1.1em
- }
+}

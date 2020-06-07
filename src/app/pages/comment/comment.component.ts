@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Comment } from '../../core/classes/comment/comment';
-import { FormBuilder } from '@angular/forms';
-import { CommentService } from '../../core/services/comment/comment.service'
+import { CommentService } from '../../core/services/comment/comment.service';
 
 @Component({
   selector: 'app-comment',
@@ -16,18 +15,17 @@ export class CommentComponent implements OnInit {
 
    constructor(private commentService: CommentService) { }
   
-   add(comment: Comment): void {
-      if(!comment) {return;}
-      this.commentService.addComment(comment)
+   add(newComment: Comment): void {
+      if(!newComment) {return;}
+      this.commentService.addComment(newComment)
       .subscribe(comment => {
         this.comments.push(comment);
       });
   }
   
-
-
   ngOnInit() {
-    this.model = new Comment("","");
+    this.model = new Comment('','');
+    this.comments = this.commentService.getComments();
   }
 
 }
