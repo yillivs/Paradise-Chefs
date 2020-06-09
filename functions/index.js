@@ -14,7 +14,7 @@ const cors = require('cors');
 // Automatically allow cross-origin requests
 app.use(cors({ origin: true }));
 
-
+/*
 app.get('/comments', (req, res) => {
     let commentRef = firestore.collection('Comment');
     let allComments = citiesRef.get()
@@ -29,5 +29,5 @@ app.get('/comments', (req, res) => {
   });
 
 });
-
+*/
 exports.api = functions.https.onRequest(app);
