@@ -43,11 +43,11 @@ export class CommentService {
   }
 
   getComments(): Observable<Comment[]> {
-    return this.http.get<Comment[]>(this.commentUrl)
+    return this.http.get<Comment[]>(`${this.commentUrl}/getComments`)
   }
 
   addComment(comment: Comment): Observable<Comment> {
-    return this.http.post<Comment>(`${this.commentUrl}/postComment`, comment, this.httpOptions).pipe(
+    return this.http.post<Comment>(`${this.commentUrl}/postComments`, comment, this.httpOptions).pipe(
       tap((newComment: Comment) => this.log(`added comment =${newComment}`)),
       catchError(this.handleError<Comment>('addComment'))
     );

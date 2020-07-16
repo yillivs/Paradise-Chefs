@@ -1,6 +1,7 @@
 .navbar {
   background : #b3ecec;
-  font-family: 'Rubik', sans-serf
+  font-family: 'Rubik', sans-serf;
+  margin-bottom: 20em;
 }
 img {
   width: 10%;

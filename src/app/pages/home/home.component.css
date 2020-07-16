@@ -1,9 +1,10 @@
 /**
 * Controls carousel size
 */
+.carousel {
+   width: 100%;
+ }
 
-
- 
 .carousel-caption{
   color: black;
   font-family: 'Prata', serif;
