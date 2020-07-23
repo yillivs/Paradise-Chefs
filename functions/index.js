@@ -11,8 +11,8 @@ const firestore = admin.firestore();
 const cors = require('cors');
 
 
-// Automatically allow cross-origin requests
-app.use(cors({ origin: true }));
+// Allow all CORS request
+app.use(cors());
 
 app.get('/getComments', (req, res) => {
     let commentRef = firestore.collection('Comments');

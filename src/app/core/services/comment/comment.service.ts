@@ -6,6 +6,8 @@ import { Observable } from 'rxjs/internal/Observable';
 import { tap, map, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 
+
+
 import { MessageService } from '../message/message.service';
 
 @Injectable({
@@ -13,7 +15,7 @@ import { MessageService } from '../message/message.service';
 })
 export class CommentService {
 
-  private commentUrl = 'https://us-central1-paradise-chefs-47fe0.cloudfunctions.net/comments';
+  private commentUrl = 'https://us-central1-paradise-chefs-47fe0.cloudfunctions.net/api';
   
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -29,7 +31,7 @@ export class CommentService {
     return (error: any): Observable<T> => {
   
       // TODO: send the error to remote logging infrastructure
-      console.error(error); // log to console instead
+      console.log(error); // log to console instead
   
       // TODO: better job of transforming error for user consumption
       this.log(`${operation} failed: ${error.message}`);
@@ -43,6 +45,7 @@ export class CommentService {
   }
 
   getComments(): Observable<Comment[]> {
+    //TODO: this json must be stringified.
     return this.http.get<Comment[]>(`${this.commentUrl}/getComments`)
   }
 

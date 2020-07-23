@@ -11,7 +11,7 @@ import { CommentService } from '../../core/services/comment/comment.service';
 export class CommentComponent implements OnInit {
   model: Comment;
   submitted = false;
-  comments;
+  comments: any = []
 
    constructor(private commentService: CommentService) { }
   
@@ -26,6 +26,9 @@ export class CommentComponent implements OnInit {
   ngOnInit() {
     this.model = new Comment('','');
     this.comments = this.commentService.getComments();
+    this.comments.forEach(element => {
+      console.log(JSON.stringify(element));
+    });
   }
 
 }
