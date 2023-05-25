@@ -1,20 +1,25 @@
 <div class ="container">
 <div class="row">
-  <div class="col-md-4">
-    <form #commentForm="ngForm">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" required class="form-control" id="name" name="fname" placeholder="Your name." [(ngModel)]="model.name">
-        <label for="u_comments">Comments</label>
-        <textarea id="u_comments" required name="user_comments" placeholder="Comments." rows="10" cols="40"  [(ngModel)]="model.comment"></textarea>
-        <input type="submit" (click)="add(model)" value="Submit">
-      </div>
-    </form>
-  </div>
-  <div class="col-md-6">
+  <div class="col-md-10">
     <ul>
-      <li *ngFor="let comment of comments | async">
-        {{ comment }}
+      <li>
+      "We were thrilled when Chef Desiree was able to fit cooking for our large family into her busy holiday season.
+      We have never had more delicious or beautifully looking meals!
+      Her knowledge of where to procure and how to prepare local fish, fruits, and vegetables was awesome.
+      We are looking forward to enjoying her interesting and delicious meals on our next trip to Costa Rica."
+      </li>
+      <li>
+      "Desiree and her team's cooking was the highlight of our vacation. We just relaxed and enjoyed all the spectacular dishes that they prepared with love."
+      </li>
+      <li>
+      "Whether it's cooking for and intimate dinner for two or for one hundred guests at a big wedding, Chef Desiree is quite famous here in Costa Rica for
+      successfully combining interresting flavors and styles of cooking. She uses her Vietnamese and French heritage mixed with the local
+      Latin ingredients to prepare exotic dishes in a "Pura Vida" atmosphere. Her Asian chicken wings are simply the best ever!"
+      </li>
+      <li>
+      My husband and I chose Desiree to do the catering for our wedding in January 2023 and we were delighted with the results.
+      She is both very experienced and highly imaginative, which made the planning so easy and stress free. On the big day Desiree and her team performed flawlessly.
+      We were thrilled with the food, as were all the guests. All the feedback was very positive. Very highly recommended.
       </li>
     </ul>
   </div>
