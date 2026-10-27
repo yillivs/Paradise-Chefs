@@ -25,6 +25,80 @@
   </div>
 </section>
 
+<section class="guest-reviews" *ngIf="reviews.length">
+  <div class="container">
+    <h2 class="section-title" appReveal>More from our guests</h2>
+    <div class="quote-grid">
+      <div class="card-wrap" *ngFor="let review of reviews; let i = index" appReveal="{{ (i % 3) * 150 }}">
+        <figure class="card-quote">
+          <span class="stars" role="img" [attr.aria-label]="review.rating + ' out of 5 stars'">
+            <span *ngFor="let star of stars" [class.on]="star <= review.rating" aria-hidden="true">&#9733;</span>
+          </span>
+          <blockquote>{{ review.comment }}</blockquote>
+          <figcaption>{{ review.name }}</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="leave-review">
+  <div class="container">
+    <h2 class="section-title" appReveal>Share your experience</h2>
+    <p class="form-intro" appReveal>
+      Cooked for by Paradise Chefs? Tell us how it went. We read every review and
+      it will appear here once we have approved it.
+    </p>
+
+    <p class="thanks" *ngIf="status === 'sent'" role="status">
+      Thank you! Your review has been received and will appear once it is approved.
+    </p>
+
+    <form #reviewForm="ngForm" (ngSubmit)="submit(reviewForm)" novalidate *ngIf="status !== 'sent'">
+      <div class="field">
+        <label for="review-name">Your name</label>
+        <input id="review-name" name="name" type="text" autocomplete="name"
+               [(ngModel)]="form.name" #nameCtrl="ngModel" required maxlength="80">
+        <p class="field-error" *ngIf="nameCtrl.invalid && (nameCtrl.touched || submitted)">Please enter your name.</p>
+      </div>
+
+      <div class="field">
+        <span id="rating-label" class="label-text">Your rating</span>
+        <div class="rating" role="radiogroup" aria-labelledby="rating-label">
+          <button *ngFor="let star of stars"
+                  type="button"
+                  role="radio"
+                  class="rating-star"
+                  [class.on]="star <= form.rating"
+                  [attr.aria-checked]="star === form.rating"
+                  [attr.aria-label]="star + (star === 1 ? ' star' : ' stars')"
+                  (click)="setRating(star)">&#9733;</button>
+        </div>
+        <p class="field-error" *ngIf="submitted && form.rating < 1">Please choose a rating.</p>
+      </div>
+
+      <div class="field">
+        <label for="review-comment">Your review</label>
+        <textarea id="review-comment" name="comment" rows="5"
+                  [(ngModel)]="form.comment" #commentCtrl="ngModel" required maxlength="1000"></textarea>
+        <p class="field-hint">{{ form.comment.length }} / 1000</p>
+        <p class="field-error" *ngIf="commentCtrl.invalid && (commentCtrl.touched || submitted)">Please write a few words about your experience.</p>
+      </div>
+
+      <!-- Honeypot: hidden from people, often filled in by bots -->
+      <div class="hp" aria-hidden="true">
+        <label for="review-website">Leave this field empty</label>
+        <input id="review-website" name="website" type="text" tabindex="-1" autocomplete="off" [(ngModel)]="form.website">
+      </div>
+
+      <button type="submit" class="btn btn-lg submit-button" [disabled]="status === 'sending'">
+        {{ status === 'sending' ? 'Sending…' : 'Send review' }}
+      </button>
+      <p class="field-error form-error" *ngIf="status === 'error'" role="alert">{{ errorMessage }}</p>
+    </form>
+  </div>
+</section>
+
 <section class="cta">
   <div class="container" appReveal>
     <h2>Your event could be next</h2>

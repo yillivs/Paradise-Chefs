@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpErrorResponse } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
 
-import { Comment } from '../../core/classes/comment/comment';
-import { CommentService } from '../../core/services/comment/comment.service';
+import { NewReview, Review } from '../../core/classes/review/review';
+import { ReviewService } from '../../core/services/review/review.service';
 
 interface Testimonial {
   label: string;
@@ -45,9 +47,51 @@ export class CommentComponent implements OnInit {
     }
   ];
 
-   constructor(private commentService: CommentService) { }
+  reviews: Review[] = [];
+  stars = [1, 2, 3, 4, 5];
+
+  form: NewReview = this.emptyForm();
+  submitted = false;
+  status: 'idle' | 'sending' | 'sent' | 'error' = 'idle';
+  errorMessage = '';
+
+  constructor(private reviewService: ReviewService) { }
 
   ngOnInit() {
+    this.reviewService.getReviews().subscribe({
+      next: reviews => this.reviews = reviews,
+      // The page works without guest reviews, so a failed load just hides them.
+      error: () => this.reviews = []
+    });
   }
 
+  setRating(rating: number) {
+    this.form.rating = rating;
+  }
+
+  submit(reviewForm: NgForm) {
+    this.submitted = true;
+    if (reviewForm.invalid || this.form.rating < 1) {
+      return;
+    }
+
+    this.status = 'sending';
+    this.errorMessage = '';
+    this.reviewService.submitReview(this.form).subscribe({
+      next: () => {
+        this.status = 'sent';
+        this.submitted = false;
+        this.form = this.emptyForm();
+        reviewForm.resetForm();
+      },
+      error: (error: HttpErrorResponse) => {
+        this.status = 'error';
+        this.errorMessage = error.error?.error || 'Something went wrong. Please try again in a moment.';
+      }
+    });
+  }
+
+  private emptyForm(): NewReview {
+    return { name: '', rating: 0, comment: '', website: '' };
+  }
 }
