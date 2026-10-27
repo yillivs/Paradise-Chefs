@@ -46,12 +46,11 @@
   <div class="container">
     <h2 class="section-title" appReveal>Share your experience</h2>
     <p class="form-intro" appReveal>
-      Cooked for by Paradise Chefs? Tell us how it went. We read every review and
-      it will appear here once we have approved it.
+      Cooked for by Paradise Chefs? Tell us how it went.
     </p>
 
     <p class="thanks" *ngIf="status === 'sent'" role="status">
-      Thank you! Your review has been received and will appear once it is approved.
+      Thank you! Your review has been received.
     </p>
 
     <form #reviewForm="ngForm" (ngSubmit)="submit(reviewForm)" novalidate *ngIf="status !== 'sent'">
