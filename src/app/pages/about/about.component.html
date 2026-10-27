@@ -1,27 +1,105 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <div class="card">
-        <img class="card-img-top" src="../../../assets/desiree.jpg" alt="Desiree">
-        <div class="card-body">
-          <h1 class="card-title">Desiree</h1>
-          <p class="card-text">American, French, and Vietnamese, she moved to Costa Rica 30 years
-            ago blending her multi-national background into an innovative fusion of cuisines.
-            Seafood and locally sourced produce are some of her specialties, as well old-fashioned comfort favorites.
+<section class="intro">
+  <div class="container">
+    <p class="eyebrow">About Paradise Chefs Etc.</p>
+    <h1>Great food in Costa Rica, without lifting a finger.</h1>
+    <p class="lead-text">
+      We are a Costa Rica catering company offering full service catering,
+      private chefs and cooking classes.
+    </p>
+    <a class="btn btn-lg cta-button" href="mailto:costadezz@gmail.com">Email us about your event</a>
+  </div>
+</section>
+
+<section class="benefits">
+  <div class="container">
+    <h2 class="section-title" appReveal>What we do for you</h2>
+    <div class="row g-4">
+      <div class="col-md-4" appReveal>
+        <div class="benefit">
+          <h3>Host the party, enjoy the party</h3>
+          <p>
+            From an intimate dinner for two to a wedding for one hundred, we plan,
+            shop and cook so you can spend the day with your guests.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4" appReveal="150">
+        <div class="benefit">
+          <h3>Come home to dinner</h3>
+          <p>
+            Spend your vacation on the beach or in the jungle and return to a
+            home cooked meal already in the making.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4" appReveal="300">
+        <div class="benefit">
+          <h3>Take the flavors home</h3>
+          <p>
+            Our family-friendly, hands-on classes teach you local ingredients and
+            recipes you can cook again long after the trip.
           </p>
         </div>
       </div>
     </div>
-    <div class="col-md-6">
-      <div class="card">
-        <img class="card-img-top" src="../../../assets/Juan.jpg" alt="Juan">
-        <div class="card-body">
-          <h2 class="card-title">Juan</h2>
-          <p class="card-text">High school teacher of horticulture by day, chef and bartender by night.
-              Juan is a master of the grill and of mixology. Whether it's a whole fish wrapped in banana leaves,
-               or a made-from-scratch Margarita, guests are sure to enjoy the meaning of authentic Costa Rican hospitality.</p>
-        </div>
-
-      </div>
   </div>
-</div>
+</section>
+
+<section class="chefs">
+  <div class="container">
+    <h2 class="section-title" appReveal>Your chefs</h2>
+
+    <div class="row chef align-items-center g-5">
+      <div class="col-md-5" appReveal>
+        <div class="chef-photo">
+          <img src="assets/desiree.jpg" alt="Chef Desiree" loading="lazy">
+        </div>
+      </div>
+      <div class="col-md-7" appReveal="150">
+        <h3>Desiree</h3>
+        <p class="chef-tagline">Meals that taste like where you are</p>
+        <p>
+          American, French and Vietnamese, Desiree moved to Costa Rica 30 years ago
+          and blends her background into an inventive fusion of cuisines. She knows
+          where to find the best local seafood and produce, and she is just as happy
+          making old-fashioned comfort favorites.
+        </p>
+      </div>
+    </div>
+
+    <div class="row chef chef-reverse align-items-center g-5">
+      <div class="col-md-5 order-md-2" appReveal>
+        <div class="chef-photo">
+          <img src="assets/Juan.jpg" alt="Chef Juan" loading="lazy">
+        </div>
+      </div>
+      <div class="col-md-7 order-md-1" appReveal="150">
+        <h3>Juan</h3>
+        <p class="chef-tagline">Authentic Costa Rican hospitality, from the grill to the glass</p>
+        <p>
+          A high school horticulture teacher by day and a chef and bartender by night,
+          Juan is a master of the grill and of mixology. Expect a whole fish wrapped
+          in banana leaves or a made-from-scratch Margarita.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="container" appReveal>
+    <blockquote>
+      “Desiree and her team's cooking was the highlight of our vacation. We just
+      relaxed and enjoyed all the spectacular dishes that they prepared with love.”
+    </blockquote>
+    <a class="proof-link" [routerLink]="['/comment']">Read more from our guests</a>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container" appReveal>
+    <h2>Ready when you are</h2>
+    <p>Tell us the occasion, the date and how many people, and we will take it from there.</p>
+    <a class="btn btn-lg cta-button" href="mailto:costadezz@gmail.com">costadezz&#64;gmail.com</a>
+  </div>
+</section>
