@@ -1,27 +1,34 @@
-<div class ="container">
-<div class="row">
-  <div class="col-md-10">
-    <ul>
-      <li>
-      "We were thrilled when Chef Desiree was able to fit cooking for our large family into her busy holiday season.
-      We have never had more delicious or beautifully looking meals!
-      Her knowledge of where to procure and how to prepare local fish, fruits, and vegetables was awesome.
-      We are looking forward to enjoying her interesting and delicious meals on our next trip to Costa Rica."
-      </li>
-      <li>
-      "Desiree and her team's cooking was the highlight of our vacation. We just relaxed and enjoyed all the spectacular dishes that they prepared with love."
-      </li>
-      <li>
-      "Whether it's cooking for and intimate dinner for two or for one hundred guests at a big wedding, Chef Desiree is quite famous here in Costa Rica for
-      successfully combining interresting flavors and styles of cooking. She uses her Vietnamese and French heritage mixed with the local
-      Latin ingredients to prepare exotic dishes in a "Pura Vida" atmosphere. Her Asian chicken wings are simply the best ever!"
-      </li>
-      <li>
-      My husband and I chose Desiree to do the catering for our wedding in January 2023 and we were delighted with the results.
-      She is both very experienced and highly imaginative, which made the planning so easy and stress free. On the big day Desiree and her team performed flawlessly.
-      We were thrilled with the food, as were all the guests. All the feedback was very positive. Very highly recommended.
-      </li>
-    </ul>
+<section class="intro">
+  <p class="eyebrow">Testimonials</p>
+  <h1>Kind words from our guests</h1>
+</section>
+
+<section class="featured">
+  <div class="container" appReveal>
+    <span class="mark" aria-hidden="true">&ldquo;</span>
+    <blockquote>{{ featured.quote }}</blockquote>
+    <p class="label">{{ featured.label }}</p>
   </div>
-</div>
-</div>
+</section>
+
+<section class="more">
+  <div class="container">
+    <div class="quote-grid">
+      <div class="card-wrap" *ngFor="let t of testimonials; let i = index" appReveal="{{ i * 150 }}">
+        <figure class="card-quote">
+          <span class="mark" aria-hidden="true">&ldquo;</span>
+          <blockquote>{{ t.quote }}</blockquote>
+          <figcaption>{{ t.label }}</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container" appReveal>
+    <h2>Your event could be next</h2>
+    <p>Tell us the occasion, the date and how many people, and we will take it from there.</p>
+    <a class="btn btn-lg cta-button" href="mailto:costadezz@gmail.com">costadezz&#64;gmail.com</a>
+  </div>
+</section>
