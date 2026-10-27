@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 
+:root {
+  --header-h: 4.5em;
+}
+
 /* Scroll reveal, applied by RevealDirective */
 .reveal {
   opacity: 0;

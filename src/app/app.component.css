@@ -5,13 +5,8 @@
 }
 
 #routerView{
-    padding-top: 5.7em;
+    padding-top: var(--header-h);
     width: 100%;
     flex: 1 0 auto;
 }
 
-@media screen and (max-width: 900px) {
-    #routerView{
-        padding-top: 6.5em;
-    }
-}

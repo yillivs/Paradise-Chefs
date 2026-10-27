@@ -1,14 +1,196 @@
-.navbar {
-  background : #04646c;
-  font-family: 'Rubik', sans-serf;
-  margin-bottom: 20em;
-  transition: box-shadow 0.4s ease;
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(1.2em, 4vw, 3em);
+  color: #fff;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
 
-.navbar.scrolled {
-  box-shadow: 0 0.4em 1.2em rgba(0, 0, 0, 0.3);
+.site-header.solid {
+  color: #1f2a2c;
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom-color: #e6e0d2;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 }
-img {
-  width: 10%;
-  height: 10%;
+
+/* When the menu is open the header sits on the teal overlay */
+.site-header.open {
+  color: #fff;
+  background: transparent;
+  border-bottom-color: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  color: inherit;
+  text-decoration: none;
+  font-family: 'Prata', serif;
+  font-size: 1.05em;
+  letter-spacing: 0.08em;
+}
+
+.brand img {
+  height: 2.4em;
+  width: auto;
+}
+
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.9em;
+  padding: 0.5em 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.95em;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.menu-toggle:focus-visible,
+.brand:focus-visible {
+  outline: 2px solid #a5bf36;
+  outline-offset: 4px;
+}
+
+.bars {
+  position: relative;
+  width: 1.6em;
+  height: 0.7em;
+}
+
+.bars span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transition: transform 0.4s ease, top 0.4s ease;
+}
+
+.bars span:first-child {
+  top: 0;
+}
+
+.bars span:last-child {
+  top: 100%;
+}
+
+.open .bars span:first-child {
+  top: 50%;
+  transform: rotate(45deg);
+}
+
+.open .bars span:last-child {
+  top: 50%;
+  transform: rotate(-45deg);
+}
+
+/* Full-screen menu */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #04646c;
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, visibility 0s linear 0.5s;
+}
+
+.overlay.open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s ease, visibility 0s;
+}
+
+.overlay ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.overlay li {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.overlay.open li {
+  opacity: 1;
+  transform: none;
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: calc(0.15s + var(--i, 0) * 0.08s);
+}
+
+.overlay li a {
+  display: inline-block;
+  padding: 0.15em 0;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Prata', serif;
+  font-size: clamp(2.2em, 7vw, 3.8em);
+  line-height: 1.3;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.overlay li a:hover,
+.overlay li a:focus-visible {
+  color: #a5bf36;
+}
+
+.overlay li a.active {
+  border-bottom-color: #a5bf36;
+}
+
+.overlay-contact {
+  position: absolute;
+  bottom: 2.5em;
+  color: #cfe0a0;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.overlay-contact:hover {
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .brand span {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-header,
+  .bars span,
+  .overlay,
+  .overlay li,
+  .overlay.open li,
+  .overlay li a {
+    transition: none;
+  }
 }
