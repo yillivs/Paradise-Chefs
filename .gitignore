@@ -47,3 +47,6 @@ Thumbs.db
 
 # Angular build cache
 /.angular
+
+# Wrangler local state
+/.wrangler
