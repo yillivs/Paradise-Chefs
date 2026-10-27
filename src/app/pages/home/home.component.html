@@ -1,5 +1,7 @@
 <section class="hero">
-  <img class="hero-image" src="assets/Pozole3.JPG" alt="Pozole prepared by Paradise Chefs">
+  <img class="hero-image" src="assets/web/hero-1920.jpg"
+       srcset="assets/web/hero-960.jpg 960w, assets/web/hero-1920.jpg 1920w" sizes="100vw"
+       fetchpriority="high" alt="Pozole prepared by Paradise Chefs">
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <p class="hero-eyebrow">Costa Rica</p>
@@ -29,7 +31,9 @@
       <div class="col-md-4" appReveal>
         <a class="tile" [routerLink]="['/menu']">
           <div class="tile-media">
-            <img src="assets/Pozole1.JPG" alt="Full service catering" loading="lazy">
+            <img src="assets/web/catering-1000.jpg"
+                 srcset="assets/web/catering-600.jpg 600w, assets/web/catering-1000.jpg 1000w"
+                 sizes="(min-width: 768px) 380px, 100vw" alt="Full service catering" loading="lazy">
           </div>
           <h2>Full service catering</h2>
           <p>From casual to refined, we help you plan your event and take care of all things food.</p>
@@ -39,7 +43,9 @@
       <div class="col-md-4" appReveal="150">
         <a class="tile" [routerLink]="['/about']">
           <div class="tile-media">
-            <img src="assets/Tomate.JPG" alt="Cooking classes" loading="lazy">
+            <img src="assets/web/classes-1000.jpg"
+                 srcset="assets/web/classes-600.jpg 600w, assets/web/classes-1000.jpg 1000w"
+                 sizes="(min-width: 768px) 380px, 100vw" alt="Cooking classes" loading="lazy">
           </div>
           <h2>Cooking classes</h2>
           <p>Let us share our knowledge of local ingredients and recipes you can take home.</p>
@@ -49,7 +55,9 @@
       <div class="col-md-4" appReveal="300">
         <a class="tile" [routerLink]="['/about']">
           <div class="tile-media">
-            <img src="assets/Ceviche.JPG" alt="Private chefs" loading="lazy">
+            <img src="assets/web/chefs-1000.jpg"
+                 srcset="assets/web/chefs-600.jpg 600w, assets/web/chefs-1000.jpg 1000w"
+                 sizes="(min-width: 768px) 380px, 100vw" alt="Private chefs" loading="lazy">
           </div>
           <h2>Private chefs</h2>
           <p>Enjoy your vacation and return to a home cooked meal in the making.</p>
@@ -64,12 +72,12 @@
   <div class="container">
     <h2 class="section-title" appReveal>From our kitchen</h2>
     <div class="kitchen-grid">
-      <a [routerLink]="['/menu']" appReveal><img src="assets/Gallery%20Photos/Bocas.jpg" alt="Bocas" loading="lazy"></a>
-      <a [routerLink]="['/menu']" appReveal="100"><img src="assets/Gallery%20Photos/Braised%20Pork.jpg" alt="Braised pork" loading="lazy"></a>
-      <a [routerLink]="['/menu']" appReveal="200"><img src="assets/Gallery%20Photos/Fruit%20Salad.jpg" alt="Fruit salad" loading="lazy"></a>
-      <a [routerLink]="['/menu']" appReveal><img src="assets/Gallery%20Photos/Lettuce%20Wraps.jpg" alt="Lettuce wraps" loading="lazy"></a>
-      <a [routerLink]="['/menu']" appReveal="100"><img src="assets/Gallery%20Photos/Meal.jpg" alt="A plated meal" loading="lazy"></a>
-      <a [routerLink]="['/menu']" appReveal="200"><img src="assets/Gallery%20Photos/Meal2.jpg" alt="A family style meal" loading="lazy"></a>
+      <a [routerLink]="['/menu']" appReveal><img src="assets/web/appetizers-800.jpg" alt="Bocas" loading="lazy"></a>
+      <a [routerLink]="['/menu']" appReveal="100"><img src="assets/web/mains-800.jpg" alt="Braised pork" loading="lazy"></a>
+      <a [routerLink]="['/menu']" appReveal="200"><img src="assets/web/desserts-800.jpg" alt="Fruit salad" loading="lazy"></a>
+      <a [routerLink]="['/menu']" appReveal><img src="assets/web/lettuce-wraps-800.jpg" alt="Lettuce wraps" loading="lazy"></a>
+      <a [routerLink]="['/menu']" appReveal="100"><img src="assets/web/sides-800.jpg" alt="A plated meal" loading="lazy"></a>
+      <a [routerLink]="['/menu']" appReveal="200"><img src="assets/web/pasta-800.jpg" alt="A family style meal" loading="lazy"></a>
     </div>
     <div class="text-center" appReveal>
       <a class="btn btn-outline-dark btn-lg" [routerLink]="['/menu']">See the menu and photos</a>
