@@ -1,53 +1,86 @@
-<div id="slider" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#slider" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#slider" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#slider" data-bs-slide-to="2" aria-label="Slide 3"></button>
+<section class="hero">
+  <img class="hero-image" src="assets/Pozole3.JPG" alt="Pozole prepared by Paradise Chefs">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Costa Rica</p>
+    <h1 class="hero-title">Fresh, local flavors<br>for every occasion</h1>
+    <p class="hero-sub">From casual to refined, we take care of everything food-related.</p>
+    <div class="hero-actions">
+      <a class="btn btn-light btn-lg" [routerLink]="['/menu']">See the menu</a>
+      <a class="btn btn-outline-light btn-lg" href="mailto:costadezz@gmail.com">Contact us</a>
+    </div>
   </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img class="d-block w-100" src="../../../assets/Pozole3.JPG" alt="First slide">
-        <div class="carousel-caption">
-          <h1>
-            Full service catering
-          </h1>
-          <p>
-            We are a catering company. From casual to refined,
-            we can help you plan your event and take care of all food-related.
-          </p>
-        </div>
+  <a class="hero-scroll" href="#statement" aria-label="Scroll to content"><span></span></a>
+</section>
+
+<section id="statement" class="statement">
+  <div class="container">
+    <p class="statement-text" appReveal>
+      Our obsession is simple: colorful, seasonal, locally sourced ingredients,
+      prepared with love.
+    </p>
+    <span class="statement-rule" appReveal="250"></span>
+  </div>
+</section>
+
+<section class="services">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4" appReveal>
+        <a class="tile" [routerLink]="['/menu']">
+          <div class="tile-media">
+            <img src="assets/Pozole1.JPG" alt="Full service catering" loading="lazy">
+          </div>
+          <h2>Full service catering</h2>
+          <p>From casual to refined, we help you plan your event and take care of all things food.</p>
+          <span class="tile-link">Explore the menu</span>
+        </a>
       </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="../../../assets/Tomate.JPG" alt="Second slide">
-        <div class="carousel-caption">
-          <h1>
-            Cooking classes 
-          </h1>
-          <p>
-            Let us share our knowledge of local ingredients and recipes
-            that you can take home. We offer family-friendly and interactive classes.
-          </p>
-        </div>
+      <div class="col-md-4" appReveal="150">
+        <a class="tile" [routerLink]="['/about']">
+          <div class="tile-media">
+            <img src="assets/Tomate.JPG" alt="Cooking classes" loading="lazy">
+          </div>
+          <h2>Cooking classes</h2>
+          <p>Let us share our knowledge of local ingredients and recipes you can take home.</p>
+          <span class="tile-link">Learn more</span>
+        </a>
       </div>
-      <div class="carousel-item">
-        <img class="d-block w-100" src="../../../assets/Ceviche.JPG" alt="Third slide">
-        <div class="carousel-caption">
-          <h1>
-            Private chefs 
-          </h1>
-          <p>
-            We want your vacation to be a dream come true where you can enjoy daily activities
-            and return to refreshments and a home cooked meal in the making.
-          </p>
-        </div>
+      <div class="col-md-4" appReveal="300">
+        <a class="tile" [routerLink]="['/about']">
+          <div class="tile-media">
+            <img src="assets/Ceviche.JPG" alt="Private chefs" loading="lazy">
+          </div>
+          <h2>Private chefs</h2>
+          <p>Enjoy your vacation and return to a home cooked meal in the making.</p>
+          <span class="tile-link">Meet the chefs</span>
+        </a>
       </div>
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#slider" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#slider" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-</div>
+  </div>
+</section>
+
+<section class="kitchen">
+  <div class="container">
+    <h2 class="section-title" appReveal>From our kitchen</h2>
+    <div class="kitchen-grid">
+      <a [routerLink]="['/gallery']" appReveal><img src="assets/Gallery%20Photos/Bocas.jpg" alt="Bocas" loading="lazy"></a>
+      <a [routerLink]="['/gallery']" appReveal="100"><img src="assets/Gallery%20Photos/Braised%20Pork.jpg" alt="Braised pork" loading="lazy"></a>
+      <a [routerLink]="['/gallery']" appReveal="200"><img src="assets/Gallery%20Photos/Fruit%20Salad.jpg" alt="Fruit salad" loading="lazy"></a>
+      <a [routerLink]="['/gallery']" appReveal><img src="assets/Gallery%20Photos/Lettuce%20Wraps.jpg" alt="Lettuce wraps" loading="lazy"></a>
+      <a [routerLink]="['/gallery']" appReveal="100"><img src="assets/Gallery%20Photos/Meal.jpg" alt="A plated meal" loading="lazy"></a>
+      <a [routerLink]="['/gallery']" appReveal="200"><img src="assets/Gallery%20Photos/Meal2.jpg" alt="A family style meal" loading="lazy"></a>
+    </div>
+    <div class="text-center" appReveal>
+      <a class="btn btn-outline-dark btn-lg" [routerLink]="['/gallery']">View the full gallery</a>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container" appReveal>
+    <h2>Planning an event?</h2>
+    <p>Tell us what you have in mind and we will take it from there.</p>
+    <a class="btn btn-lg cta-button" href="mailto:costadezz@gmail.com">Contact us at costadezz@gmail.com</a>
+  </div>
+</section>

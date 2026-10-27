@@ -2,6 +2,11 @@
   background : #04646c;
   font-family: 'Rubik', sans-serf;
   margin-bottom: 20em;
+  transition: box-shadow 0.4s ease;
+}
+
+.navbar.scrolled {
+  box-shadow: 0 0.4em 1.2em rgba(0, 0, 0, 0.3);
 }
 img {
   width: 10%;
