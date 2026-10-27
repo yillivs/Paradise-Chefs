@@ -5,9 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "test": "ng test"
   },
   "private": true,
   "dependencies": {
@@ -22,9 +20,6 @@
     "@babel/compat-data": "^7.21.9",
     "ajv": "^7.2.4",
     "bootstrap": "^5.2.3",
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "firebase": "^9.22.0",
     "jasmine": "^5.0.0",
     "jquery": "^3.7.0",
     "popper.js": "^1.16.1",
@@ -38,20 +33,13 @@
     "@angular/compiler-cli": "~16.0.3",
     "@angular/language-service": "~16.0.3",
     "@types/jasmine": "~4.3.1",
-    "@types/jasminewd2": "~2.0.10",
     "@types/node": "~20.2.3",
-    "codelyzer": "^6.0.2",
-    "eslint": "^8.41.0",
     "jasmine-core": "^5.0.0",
-    "jasmine-spec-reporter": "~7.0.0",
     "karma": "~6.4.2",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage-istanbul-reporter": "~3.0.3",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "^2.0.0",
-    "protractor": "^5.4.4",
-    "ts-node": "~10.9.1",
-    "tslint": "~5.20.1",
     "typescript": "~5.0.4"
   }
 }
