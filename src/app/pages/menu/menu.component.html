@@ -1,51 +1,93 @@
-<div id="menu" class="col-md-10">
-<p class="headers">Appetizers:</p>
-  <ul>
-    <li>Quesadillas with Chipotle flavored chicken, pico de gallo, and guacamole</li>
-    <li>Shrimp cocktail with classic' horseradish cocktail sauce</li>
-    <li>New Orleans style shrimp rémoulåde served on a mixed raw veggie salad</li>
-    <li>Indonesian Chicken Saté skewers with peanut sauce</li>
-    <li>Fresh or crispy spring roll* sushi maki and dipping sauces  Seared Ahi Tuna with wasabi and soy sauce</li>
-  </ul>
-<p class="headers">Soups:</p>
-  <ul>
-    <li>French Onion Soup</li>
-    <li>Thai Coconut-Lemongrass Chicken Soup</li>
-    <li>Creole Gumbo, with chicken and seafood</li>
-    <li>Sopa Negra, Costa Rican black bean soup served with avocado, egg, and cheese toppings.</li>
-  </ul>
-<p class="headers">Salads:</p>
-  <ul>
-    <li>Cesar Salad with herbed croutons and optional grilled chicken or fish addition</li>
-    <li>Frisée lettuce with bacon pieces, cheese, vinaigrette and toasted nuts</li>
-    <li>Mixed tossed salads with balsamic vinaigrette, buttermilk ranch, French, honey mustard, green goddess.</li>
-  </ul>
-<p class="headers">Main Courses:</p>
-  <ul>
-    <li>Grilled tenderloin steak with choice of green peppercorn, red wine and shallot, mushroom sherry, or béarnaise sauces.</li>
-    <li>Grilled Mahi Mahi fillet, tuna steak, jumbo shrimps or lobster tail cooked in varying combinations</li>
-    <li>Hungarian Chicken Paprika or Indian Chicken Masala</li>
-    <li>Lemon-Rosemary Chicken</li>
-    <li>Pork tenderloin in white wine and fennel sauce</li>
-  </ul>
-<p class="headers">Pasta:</p>
-  <ul>
-    <li>Spaghetti, fettuccini, or penne with white sauce (Alfredo), or tomato (Marinara) sauce, and with optional meat or seafood additions</li>
-    <li>Vegetarian or Meat Lasagna</li>
-  </ul>
-<p class="headers">Side Dishes:</p>
-  <ul>
-    <li>Twice Baked or Scalloped Potatoes</li>
-    <li>Steamed Rice</li>
-    <li>Orzo with Mint</li>
-    <li>Couscous with vegetables</li>
-    <li>Steamed or sautéed vegetables of the season</li>
-  </ul>
-<p class="headers">Desserts:</p>
-  <ul>
-    <li>Bananas "flambée" with rum and ice cream</li>
-    <li>Tres Leches</li>
-    <li>Tropical Fruit Salad with ice cream</li>
-    <li>Pies, Cheesecake, and cakes for special occasions are available upon request.</li>
-  </ul>
- </div>
+<section class="menu-hero">
+  <p class="eyebrow">Paradise Chefs Etc.</p>
+  <h1>Our Menu</h1>
+  <p class="menu-sub">Bespoke party foods for small and large gatherings.</p>
+</section>
+
+<div class="tabs-bar">
+  <div class="tabs" role="tablist" aria-label="Menu categories">
+    <button *ngFor="let category of categories; let i = index"
+            type="button"
+            role="tab"
+            class="tab"
+            [id]="'tab-' + category.id"
+            [class.active]="category === selected"
+            [attr.aria-selected]="category === selected"
+            [attr.aria-controls]="'panel-' + category.id"
+            [attr.tabindex]="category === selected ? 0 : -1"
+            (click)="select(category)"
+            (keydown)="onTabKey($event, i)">
+      {{ category.name }}
+    </button>
+  </div>
+</div>
+
+<section class="menu-body container">
+  <div class="row g-5">
+    <div class="col-lg-6 order-lg-2">
+      <figure class="photo-stack">
+        <img *ngFor="let category of categories"
+             [src]="category.photo"
+             [alt]="category.photoAlt"
+             [class.active]="category === selected">
+        <figcaption>{{ selected.caption }}</figcaption>
+      </figure>
+    </div>
+
+    <div class="col-lg-6 order-lg-1">
+      <div *ngFor="let category of categories"
+           class="panel"
+           role="tabpanel"
+           [id]="'panel-' + category.id"
+           [attr.aria-labelledby]="'tab-' + category.id"
+           [class.active]="category === selected">
+        <h2>{{ category.name }}</h2>
+        <ul>
+          <li *ngFor="let dish of category.dishes; let i = index" [style.--i]="i">
+            <span class="dish-name">{{ dish.name }}</span>
+            <span *ngIf="dish.detail" class="dish-detail">{{ dish.detail }}</span>
+          </li>
+        </ul>
+      </div>
+
+      <p class="menu-note">
+        Looking for something that is not listed? Tell us what you have in mind.
+        <a href="mailto:costadezz@gmail.com">costadezz&#64;gmail.com</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="photos" class="photos">
+  <div class="container">
+    <h2 class="section-title" appReveal>From our kitchen</h2>
+    <div class="photo-grid">
+      <button *ngFor="let photo of photos; let i = index"
+              type="button"
+              class="photo-tile"
+              appReveal
+              [attr.aria-label]="'View photo: ' + photo.caption"
+              (click)="open(i)">
+        <img [src]="photo.src" [alt]="photo.alt" loading="lazy">
+        <span class="photo-caption">{{ photo.caption }}</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<div class="lightbox"
+     *ngIf="lightboxIndex !== null"
+     role="dialog"
+     aria-modal="true"
+     aria-label="Photo viewer"
+     (click)="close()">
+  <button type="button" class="lightbox-close" aria-label="Close" (click)="close()">&times;</button>
+  <button type="button" class="lightbox-nav prev" aria-label="Previous photo"
+          (click)="step(-1); $event.stopPropagation()">&#8249;</button>
+  <figure (click)="$event.stopPropagation()">
+    <img [src]="photos[lightboxIndex].src" [alt]="photos[lightboxIndex].alt">
+    <figcaption>{{ photos[lightboxIndex].caption }}</figcaption>
+  </figure>
+  <button type="button" class="lightbox-nav next" aria-label="Next photo"
+          (click)="step(1); $event.stopPropagation()">&#8250;</button>
+</div>
