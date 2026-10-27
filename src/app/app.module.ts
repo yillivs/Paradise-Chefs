@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, isDevMode } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { TRANSLOCO_CONFIG, TRANSLOCO_LOADER, TranslocoModule, translocoConfig } from '@ngneat/transloco';
+import { TranslocoModule, provideTransloco } from '@ngneat/transloco';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,10 +36,8 @@ import { TranslocoHttpLoader } from './core/i18n/transloco-loader';
     TranslocoModule
   ],
   providers: [
-    { provide: TRANSLOCO_LOADER, useClass: TranslocoHttpLoader },
-    {
-      provide: TRANSLOCO_CONFIG,
-      useValue: translocoConfig({
+    provideTransloco({
+      config: {
         availableLangs: ['en', 'es'],
         defaultLang: 'en',
         fallbackLang: 'en',
@@ -47,8 +45,9 @@ import { TranslocoHttpLoader } from './core/i18n/transloco-loader';
         prodMode: !isDevMode(),
         // Anything not yet translated shows the English text
         missingHandler: { useFallbackTranslation: true }
-      })
-    }
+      },
+      loader: TranslocoHttpLoader
+    })
   ],
   bootstrap: [AppComponent]
 })
