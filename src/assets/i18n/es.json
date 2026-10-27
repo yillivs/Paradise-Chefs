@@ -1,0 +1,233 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Acerca de nosotros",
+    "menu": "Menú",
+    "testimonials": "Testimonios",
+    "open": "Menú",
+    "close": "Cerrar",
+    "main": "Principal",
+    "language": "Idioma"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Costa Rica",
+      "titleLine1": "Sabores frescos y locales",
+      "titleLine2": "para cada ocasión",
+      "sub": "De lo casual a lo refinado, nos encargamos de todo lo relacionado con la comida.",
+      "seeMenu": "Ver el menú",
+      "contact": "Contáctenos",
+      "imageAlt": "Pozole preparado por Paradise Chefs",
+      "scroll": "Ir al contenido"
+    },
+    "statement": "Nuestra obsesión es simple: ingredientes coloridos, de temporada y de origen local, preparados con amor.",
+    "services": {
+      "catering": {
+        "title": "Servicio completo de catering",
+        "text": "De lo casual a lo refinado, le ayudamos a planear su evento y nos encargamos de todo lo relacionado con la comida.",
+        "link": "Explorar el menú"
+      },
+      "classes": {
+        "title": "Clases de cocina",
+        "text": "Permítanos compartir nuestro conocimiento de los ingredientes locales y de recetas que usted podrá llevarse a casa.",
+        "link": "Más información"
+      },
+      "chefs": {
+        "title": "Chefs privados",
+        "text": "Disfrute de sus vacaciones y regrese a una comida casera que ya se está preparando.",
+        "link": "Conozca a los chefs"
+      }
+    },
+    "kitchen": {
+      "title": "Desde nuestra cocina",
+      "seeMore": "Ver el menú y las fotos",
+      "alt": {
+        "appetizers": "Bocas",
+        "mains": "Cerdo braseado",
+        "desserts": "Ensalada de frutas",
+        "lettuceWraps": "Wraps de lechuga",
+        "sides": "Un plato servido",
+        "pasta": "Una comida al estilo familiar"
+      }
+    },
+    "cta": {
+      "title": "¿Planea un evento?",
+      "text": "Cuéntenos lo que tiene en mente y nosotros nos encargamos del resto.",
+      "button": "Contáctenos en costadezz@gmail.com"
+    }
+  },
+  "about": {
+    "intro": {
+      "eyebrow": "Acerca de Paradise Chefs Etc.",
+      "title": "Excelente comida en Costa Rica, sin que usted tenga que mover un dedo.",
+      "lead": "Somos una empresa de catering en Costa Rica que ofrece servicio completo de catering, chefs privados y clases de cocina.",
+      "button": "Escríbanos sobre su evento"
+    },
+    "benefits": {
+      "title": "Lo que hacemos por usted",
+      "party": {
+        "title": "Sea el anfitrión y disfrute de la fiesta",
+        "text": "Desde una cena íntima para dos hasta una boda de cien personas, nosotros planeamos, compramos y cocinamos para que usted pase el día con sus invitados."
+      },
+      "dinner": {
+        "title": "Regrese a casa a cenar",
+        "text": "Pase sus vacaciones en la playa o en la selva y regrese a una comida casera que ya se está preparando."
+      },
+      "classes": {
+        "title": "Lleve los sabores a casa",
+        "text": "Nuestras clases prácticas y para toda la familia le enseñan ingredientes y recetas locales que podrá volver a cocinar mucho después del viaje."
+      }
+    },
+    "chefs": {
+      "title": "Sus chefs",
+      "desiree": {
+        "tagline": "Comidas que saben al lugar donde usted está",
+        "text": "De origen estadounidense, francés y vietnamita, Desiree se mudó a Costa Rica hace 30 años y fusiona sus raíces en una creativa mezcla de cocinas. Sabe dónde encontrar los mejores mariscos y productos locales, y disfruta igualmente preparando los clásicos platos caseros de siempre.",
+        "alt": "La chef Desiree"
+      },
+      "juan": {
+        "tagline": "Auténtica hospitalidad costarricense, de la parrilla a la copa",
+        "text": "Profesor jubilado de horticultura de colegio, Juan ahora se dedica a la cocina y a la coctelería. Es un maestro de la parrilla y de la mixología, así que espere un pescado entero envuelto en hojas de plátano o una margarita hecha desde cero.",
+        "alt": "El chef Juan"
+      }
+    },
+    "proof": {
+      "link": "Lea más opiniones de nuestros invitados"
+    },
+    "cta": {
+      "title": "Listos cuando usted lo esté",
+      "text": "Díganos la ocasión, la fecha y cuántas personas serán, y nosotros nos encargamos del resto."
+    }
+  },
+  "menu": {
+    "hero": {
+      "eyebrow": "Paradise Chefs Etc.",
+      "title": "Nuestro menú",
+      "sub": "Platillos para fiestas hechos a la medida, para reuniones pequeñas y grandes."
+    },
+    "tabsLabel": "Categorías del menú",
+    "note": "¿Busca algo que no está en la lista? Cuéntenos qué tiene en mente.",
+    "photosTitle": "Desde nuestra cocina",
+    "viewPhoto": "Ver foto: {{ caption }}",
+    "viewer": {
+      "label": "Visor de fotos",
+      "close": "Cerrar",
+      "previous": "Foto anterior",
+      "next": "Foto siguiente"
+    },
+    "categories": {
+      "appetizers": {
+        "name": "Bocas",
+        "caption": "Bocas de inspiración asiática.",
+        "photoAlt": "Bocas de inspiración asiática servidas en cucharas"
+      },
+      "soups": {
+        "name": "Sopas",
+        "caption": "Pozole rojo con acompañamientos frescos.",
+        "photoAlt": "Un plato de pozole rojo con queso, rábano y cilantro"
+      },
+      "salads": {
+        "name": "Ensaladas",
+        "caption": "Ensalada del jardín para comenzar la recepción.",
+        "photoAlt": "Ensalada del jardín en una hoja de lechuga con tomates cherry y pepino"
+      },
+      "mains": {
+        "name": "Platos fuertes",
+        "caption": "Lomito de cerdo con costra de café.",
+        "photoAlt": "Rodajas de lomito de cerdo con costra de café"
+      },
+      "pasta": {
+        "name": "Pastas",
+        "caption": "Platillos para fiestas hechos a la medida, para reuniones pequeñas y grandes.",
+        "photoAlt": "Una variedad de platillos para fiesta sobre una mesa larga"
+      },
+      "sides": {
+        "name": "Acompañamientos",
+        "caption": "Platillos para fiestas hechos a la medida, para reuniones pequeñas y grandes.",
+        "photoAlt": "Una mesa con bocas, arroz al vapor y aguacate encurtido"
+      },
+      "desserts": {
+        "name": "Postres",
+        "caption": "Plato de frutas tropicales.",
+        "photoAlt": "Un plato de frutas tropicales"
+      }
+    },
+    "dishes": {
+      "quesadillas": { "name": "Quesadillas", "detail": "Pollo con sabor a chipotle, pico de gallo y guacamole" },
+      "shrimpCocktail": { "name": "Cóctel de camarones", "detail": "Salsa cóctel clásica con rábano picante" },
+      "nolaShrimp": { "name": "Camarones con rémoulade al estilo de Nueva Orleans", "detail": "Servidos sobre una ensalada mixta de vegetales crudos" },
+      "chickenSate": { "name": "Brochetas de pollo satay estilo indonesio", "detail": "Salsa de maní" },
+      "springRolls": { "name": "Rollitos primavera frescos o crujientes", "detail": "Sushi maki y salsas para acompañar" },
+      "ahiTuna": { "name": "Atún ahi sellado", "detail": "Wasabi y salsa de soya" },
+      "frenchOnion": { "name": "Sopa de cebolla francesa" },
+      "thaiSoup": { "name": "Sopa tailandesa de pollo con coco y zacate de limón" },
+      "gumbo": { "name": "Gumbo criollo", "detail": "Con pollo y mariscos" },
+      "sopaNegra": { "name": "Sopa negra", "detail": "Sopa costarricense de frijoles negros, servida con aguacate, huevo y queso" },
+      "caesar": { "name": "Ensalada César", "detail": "Crutones con hierbas, con pollo o pescado a la parrilla opcional" },
+      "frisee": { "name": "Ensalada de frisée", "detail": "Trocitos de tocineta, queso, vinagreta y nueces tostadas" },
+      "mixedSalads": { "name": "Ensaladas mixtas", "detail": "Vinagreta balsámica, ranch, francesa, miel y mostaza, o green goddess" },
+      "tenderloinSteak": { "name": "Filete de res a la parrilla", "detail": "A elegir: salsa de pimienta verde, de vino tinto y chalote, de champiñones y jerez, o bearnesa" },
+      "seafoodGrill": { "name": "Filete de dorado (mahi mahi), filete de atún, camarones jumbo o cola de langosta a la parrilla", "detail": "Preparados en diversas combinaciones" },
+      "chickenCurries": { "name": "Pollo con paprika húngaro o pollo masala indio" },
+      "lemonChicken": { "name": "Pollo al limón y romero" },
+      "porkTenderloin": { "name": "Lomito de cerdo", "detail": "Salsa de vino blanco e hinojo" },
+      "pastaSauces": { "name": "Espagueti, fettuccine o penne", "detail": "Salsa blanca (Alfredo) o de tomate (Marinara), con carne o mariscos opcionales" },
+      "lasagna": { "name": "Lasaña vegetariana o de carne" },
+      "potatoes": { "name": "Papas horneadas dos veces o gratinadas" },
+      "rice": { "name": "Arroz al vapor" },
+      "orzo": { "name": "Orzo con menta" },
+      "couscous": { "name": "Cuscús con vegetales" },
+      "vegetables": { "name": "Vegetales al vapor o salteados", "detail": "De temporada" },
+      "bananasFlambee": { "name": "Bananos flambeados", "detail": "Con ron y helado" },
+      "tresLeches": { "name": "Tres leches" },
+      "fruitSalad": { "name": "Ensalada de frutas tropicales", "detail": "Con helado" },
+      "pies": { "name": "Pays, cheesecake y queques", "detail": "Disponibles por encargo para ocasiones especiales" }
+    },
+    "photos": {
+      "appetizers": { "alt": "Bocas de inspiración asiática en cucharas", "caption": "Bocas de inspiración asiática." },
+      "lettuceWraps": { "alt": "Wraps de lechuga", "caption": "Wraps de lechuga." },
+      "soups": { "alt": "Pozole rojo", "caption": "Pozole rojo con acompañamientos frescos." },
+      "salads": { "alt": "Ensalada del jardín", "caption": "Ensalada del jardín para comenzar la recepción." },
+      "mains": { "alt": "Lomito de cerdo con costra de café", "caption": "Lomito de cerdo con costra de café." },
+      "caprese": { "alt": "Ensalada de tomate y mozzarella", "caption": "Tomate, albahaca y mozzarella." },
+      "bocas2": { "alt": "Cucharas con bocas sobre una hoja de plátano", "caption": "Bocas sobre hoja de plátano." },
+      "sides": { "alt": "Una mesa con platillos para fiesta", "caption": "Platillos para fiestas hechos a la medida, para reuniones pequeñas y grandes." },
+      "desserts": { "alt": "Plato de frutas tropicales", "caption": "Plato de frutas tropicales para comenzar el día." }
+    }
+  },
+  "testimonials": {
+    "intro": {
+      "eyebrow": "Testimonios",
+      "title": "Palabras amables de nuestros invitados"
+    },
+    "labels": {
+      "vacation": "Unas vacaciones en Costa Rica",
+      "family": "Unas vacaciones en familia",
+      "events": "Eventos de todos los tamaños",
+      "wedding": "Una boda en enero de 2023"
+    },
+    "moreTitle": "Más opiniones de nuestros invitados",
+    "ratingOutOf": "{{ rating }} de 5 estrellas",
+    "form": {
+      "title": "Comparta su experiencia",
+      "intro": "¿Cocinamos para usted? Cuéntenos cómo le fue.",
+      "thanks": "¡Gracias! Hemos recibido su opinión.",
+      "name": "Su nombre",
+      "nameError": "Por favor ingrese su nombre.",
+      "rating": "Su calificación",
+      "star": "1 estrella",
+      "stars": "{{ count }} estrellas",
+      "ratingError": "Por favor elija una calificación.",
+      "comment": "Su opinión",
+      "commentError": "Por favor escriba unas palabras sobre su experiencia.",
+      "honeypot": "Deje este campo vacío",
+      "send": "Enviar opinión",
+      "sending": "Enviando…",
+      "genericError": "Algo salió mal. Por favor intente de nuevo en un momento."
+    },
+    "cta": {
+      "title": "Su evento podría ser el próximo",
+      "text": "Díganos la ocasión, la fecha y cuántas personas serán, y nosotros nos encargamos del resto."
+    }
+  }
+}

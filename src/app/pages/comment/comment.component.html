@@ -1,24 +1,25 @@
+<ng-container *transloco="let t">
 <section class="intro">
-  <p class="eyebrow">Testimonials</p>
-  <h1>Kind words from our guests</h1>
+  <p class="eyebrow">{{ t('testimonials.intro.eyebrow') }}</p>
+  <h1>{{ t('testimonials.intro.title') }}</h1>
 </section>
 
 <section class="featured">
   <div class="container" appReveal>
     <span class="mark" aria-hidden="true">&ldquo;</span>
     <blockquote>{{ featured.quote }}</blockquote>
-    <p class="label">{{ featured.label }}</p>
+    <p class="label">{{ t(featured.labelKey) }}</p>
   </div>
 </section>
 
 <section class="more">
   <div class="container">
     <div class="quote-grid">
-      <div class="card-wrap" *ngFor="let t of testimonials; let i = index" appReveal="{{ i * 150 }}">
+      <div class="card-wrap" *ngFor="let item of testimonials; let i = index" appReveal="{{ i * 150 }}">
         <figure class="card-quote">
           <span class="mark" aria-hidden="true">&ldquo;</span>
-          <blockquote>{{ t.quote }}</blockquote>
-          <figcaption>{{ t.label }}</figcaption>
+          <blockquote>{{ item.quote }}</blockquote>
+          <figcaption>{{ t(item.labelKey) }}</figcaption>
         </figure>
       </div>
     </div>
@@ -27,11 +28,11 @@
 
 <section class="guest-reviews" *ngIf="reviews.length">
   <div class="container">
-    <h2 class="section-title" appReveal>More from our guests</h2>
+    <h2 class="section-title" appReveal>{{ t('testimonials.moreTitle') }}</h2>
     <div class="quote-grid">
       <div class="card-wrap" *ngFor="let review of reviews; let i = index" appReveal="{{ (i % 3) * 150 }}">
         <figure class="card-quote">
-          <span class="stars" role="img" [attr.aria-label]="review.rating + ' out of 5 stars'">
+          <span class="stars" role="img" [attr.aria-label]="t('testimonials.ratingOutOf', { rating: review.rating })">
             <span *ngFor="let star of stars" [class.on]="star <= review.rating" aria-hidden="true">&#9733;</span>
           </span>
           <blockquote>{{ review.comment }}</blockquote>
@@ -44,25 +45,25 @@
 
 <section class="leave-review">
   <div class="container">
-    <h2 class="section-title" appReveal>Share your experience</h2>
+    <h2 class="section-title" appReveal>{{ t('testimonials.form.title') }}</h2>
     <p class="form-intro" appReveal>
-      Cooked for by Paradise Chefs? Tell us how it went.
+      {{ t('testimonials.form.intro') }}
     </p>
 
     <p class="thanks" *ngIf="status === 'sent'" role="status">
-      Thank you! Your review has been received.
+      {{ t('testimonials.form.thanks') }}
     </p>
 
     <form #reviewForm="ngForm" (ngSubmit)="submit(reviewForm)" novalidate *ngIf="status !== 'sent'">
       <div class="field">
-        <label for="review-name">Your name</label>
+        <label for="review-name">{{ t('testimonials.form.name') }}</label>
         <input id="review-name" name="name" type="text" autocomplete="name"
                [(ngModel)]="form.name" #nameCtrl="ngModel" required maxlength="80">
-        <p class="field-error" *ngIf="nameCtrl.invalid && (nameCtrl.touched || submitted)">Please enter your name.</p>
+        <p class="field-error" *ngIf="nameCtrl.invalid && (nameCtrl.touched || submitted)">{{ t('testimonials.form.nameError') }}</p>
       </div>
 
       <div class="field">
-        <span id="rating-label" class="label-text">Your rating</span>
+        <span id="rating-label" class="label-text">{{ t('testimonials.form.rating') }}</span>
         <div class="rating" role="radiogroup" aria-labelledby="rating-label">
           <button *ngFor="let star of stars"
                   type="button"
@@ -70,38 +71,39 @@
                   class="rating-star"
                   [class.on]="star <= form.rating"
                   [attr.aria-checked]="star === form.rating"
-                  [attr.aria-label]="star + (star === 1 ? ' star' : ' stars')"
+                  [attr.aria-label]="star === 1 ? t('testimonials.form.star') : t('testimonials.form.stars', { count: star })"
                   (click)="setRating(star)">&#9733;</button>
         </div>
-        <p class="field-error" *ngIf="submitted && form.rating < 1">Please choose a rating.</p>
+        <p class="field-error" *ngIf="submitted && form.rating < 1">{{ t('testimonials.form.ratingError') }}</p>
       </div>
 
       <div class="field">
-        <label for="review-comment">Your review</label>
+        <label for="review-comment">{{ t('testimonials.form.comment') }}</label>
         <textarea id="review-comment" name="comment" rows="5"
                   [(ngModel)]="form.comment" #commentCtrl="ngModel" required maxlength="1000"></textarea>
         <p class="field-hint">{{ form.comment.length }} / 1000</p>
-        <p class="field-error" *ngIf="commentCtrl.invalid && (commentCtrl.touched || submitted)">Please write a few words about your experience.</p>
+        <p class="field-error" *ngIf="commentCtrl.invalid && (commentCtrl.touched || submitted)">{{ t('testimonials.form.commentError') }}</p>
       </div>
 
       <!-- Honeypot: hidden from people, often filled in by bots -->
       <div class="hp" aria-hidden="true">
-        <label for="review-website">Leave this field empty</label>
+        <label for="review-website">{{ t('testimonials.form.honeypot') }}</label>
         <input id="review-website" name="website" type="text" tabindex="-1" autocomplete="off" [(ngModel)]="form.website">
       </div>
 
       <button type="submit" class="btn btn-lg submit-button" [disabled]="status === 'sending'">
-        {{ status === 'sending' ? 'Sending…' : 'Send review' }}
+        {{ status === 'sending' ? t('testimonials.form.sending') : t('testimonials.form.send') }}
       </button>
-      <p class="field-error form-error" *ngIf="status === 'error'" role="alert">{{ errorMessage }}</p>
+      <p class="field-error form-error" *ngIf="status === 'error'" role="alert">{{ errorMessage || t('testimonials.form.genericError') }}</p>
     </form>
   </div>
 </section>
 
 <section class="cta">
   <div class="container" appReveal>
-    <h2>Your event could be next</h2>
-    <p>Tell us the occasion, the date and how many people, and we will take it from there.</p>
+    <h2>{{ t('testimonials.cta.title') }}</h2>
+    <p>{{ t('testimonials.cta.text') }}</p>
     <a class="btn btn-lg cta-button" href="mailto:costadezz@gmail.com">costadezz&#64;gmail.com</a>
   </div>
 </section>
+</ng-container>

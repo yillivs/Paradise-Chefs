@@ -1,44 +1,33 @@
+<ng-container *transloco="let t">
 <section class="intro">
   <div class="container">
-    <p class="eyebrow">About Paradise Chefs Etc.</p>
-    <h1>Great food in Costa Rica, without lifting a finger.</h1>
-    <p class="lead-text">
-      We are a Costa Rica catering company offering full service catering,
-      private chefs and cooking classes.
-    </p>
-    <a class="btn btn-lg cta-button" href="mailto:costadezz@gmail.com">Email us about your event</a>
+    <p class="eyebrow">{{ t('about.intro.eyebrow') }}</p>
+    <h1>{{ t('about.intro.title') }}</h1>
+    <p class="lead-text">{{ t('about.intro.lead') }}</p>
+    <a class="btn btn-lg cta-button" href="mailto:costadezz@gmail.com">{{ t('about.intro.button') }}</a>
   </div>
 </section>
 
 <section class="benefits">
   <div class="container">
-    <h2 class="section-title" appReveal>What we do for you</h2>
+    <h2 class="section-title" appReveal>{{ t('about.benefits.title') }}</h2>
     <div class="row g-4">
       <div class="col-md-4" appReveal>
         <div class="benefit">
-          <h3>Host the party, enjoy the party</h3>
-          <p>
-            From an intimate dinner for two to a wedding for one hundred, we plan,
-            shop and cook so you can spend the day with your guests.
-          </p>
+          <h3>{{ t('about.benefits.party.title') }}</h3>
+          <p>{{ t('about.benefits.party.text') }}</p>
         </div>
       </div>
       <div class="col-md-4" appReveal="150">
         <div class="benefit">
-          <h3>Come home to dinner</h3>
-          <p>
-            Spend your vacation on the beach or in the jungle and return to a
-            home cooked meal already in the making.
-          </p>
+          <h3>{{ t('about.benefits.dinner.title') }}</h3>
+          <p>{{ t('about.benefits.dinner.text') }}</p>
         </div>
       </div>
       <div class="col-md-4" appReveal="300">
         <div class="benefit">
-          <h3>Take the flavors home</h3>
-          <p>
-            Our family-friendly, hands-on classes teach you local ingredients and
-            recipes you can cook again long after the trip.
-          </p>
+          <h3>{{ t('about.benefits.classes.title') }}</h3>
+          <p>{{ t('about.benefits.classes.text') }}</p>
         </div>
       </div>
     </div>
@@ -47,42 +36,33 @@
 
 <section class="chefs">
   <div class="container">
-    <h2 class="section-title" appReveal>Your chefs</h2>
+    <h2 class="section-title" appReveal>{{ t('about.chefs.title') }}</h2>
 
     <div class="row chef align-items-center g-5">
       <div class="col-md-5" appReveal>
         <div class="chef-photo">
           <img src="assets/web/desiree-1000.jpg"
                srcset="assets/web/desiree-500.jpg 500w, assets/web/desiree-1000.jpg 1000w"
-               sizes="(min-width: 768px) 450px, 100vw" alt="Chef Desiree" loading="lazy">
+               sizes="(min-width: 768px) 450px, 100vw" [alt]="t('about.chefs.desiree.alt')" loading="lazy">
         </div>
       </div>
       <div class="col-md-7" appReveal="150">
         <h3>Desiree</h3>
-        <p class="chef-tagline">Meals that taste like where you are</p>
-        <p>
-          American, French and Vietnamese, Desiree moved to Costa Rica 30 years ago
-          and blends her background into an inventive fusion of cuisines. She knows
-          where to find the best local seafood and produce, and she is just as happy
-          making old-fashioned comfort favorites.
-        </p>
+        <p class="chef-tagline">{{ t('about.chefs.desiree.tagline') }}</p>
+        <p>{{ t('about.chefs.desiree.text') }}</p>
       </div>
     </div>
 
     <div class="row chef chef-reverse align-items-center g-5">
       <div class="col-md-5 order-md-2" appReveal>
         <div class="chef-photo">
-          <img src="assets/Juan.jpg" alt="Chef Juan" loading="lazy">
+          <img src="assets/Juan.jpg" [alt]="t('about.chefs.juan.alt')" loading="lazy">
         </div>
       </div>
       <div class="col-md-7 order-md-1" appReveal="150">
         <h3>Juan</h3>
-        <p class="chef-tagline">Authentic Costa Rican hospitality, from the grill to the glass</p>
-        <p>
-          A retired high school horticulture teacher, Juan now spends his time as a chef
-          and bartender. He is a master of the grill and of mixology, so expect a whole
-          fish wrapped in banana leaves or a made-from-scratch Margarita.
-        </p>
+        <p class="chef-tagline">{{ t('about.chefs.juan.tagline') }}</p>
+        <p>{{ t('about.chefs.juan.text') }}</p>
       </div>
     </div>
   </div>
@@ -90,18 +70,20 @@
 
 <section class="proof">
   <div class="container" appReveal>
+    <!-- A guest's own words, so it is not translated -->
     <blockquote>
       “Desiree and her team's cooking was the highlight of our vacation. We just
       relaxed and enjoyed all the spectacular dishes that they prepared with love.”
     </blockquote>
-    <a class="proof-link" [routerLink]="['/comment']">Read more from our guests</a>
+    <a class="proof-link" [routerLink]="['/comment']">{{ t('about.proof.link') }}</a>
   </div>
 </section>
 
 <section class="cta">
   <div class="container" appReveal>
-    <h2>Ready when you are</h2>
-    <p>Tell us the occasion, the date and how many people, and we will take it from there.</p>
+    <h2>{{ t('about.cta.title') }}</h2>
+    <p>{{ t('about.cta.text') }}</p>
     <a class="btn btn-lg cta-button" href="mailto:costadezz@gmail.com">costadezz&#64;gmail.com</a>
   </div>
 </section>
+</ng-container>

@@ -6,7 +6,8 @@ import { NewReview, Review } from '../../core/classes/review/review';
 import { ReviewService } from '../../core/services/review/review.service';
 
 interface Testimonial {
-  label: string;
+  /** Translation key for the label; the quote itself is a guest's own words. */
+  labelKey: string;
   quote: string;
 }
 
@@ -18,28 +19,28 @@ interface Testimonial {
 export class CommentComponent implements OnInit {
 
   featured: Testimonial = {
-    label: 'A vacation in Costa Rica',
+    labelKey: 'testimonials.labels.vacation',
     quote: 'Desiree and her team\'s cooking was the highlight of our vacation. ' +
       'We just relaxed and enjoyed all the spectacular dishes that they prepared with love.'
   };
 
   testimonials: Testimonial[] = [
     {
-      label: 'A family holiday',
+      labelKey: 'testimonials.labels.family',
       quote: 'We were thrilled when Chef Desiree was able to fit cooking for our large family into her busy holiday season. ' +
         'We have never had more delicious or beautifully looking meals! ' +
         'Her knowledge of where to procure and how to prepare local fish, fruits, and vegetables was awesome. ' +
         'We are looking forward to enjoying her interesting and delicious meals on our next trip to Costa Rica.'
     },
     {
-      label: 'Events of every size',
+      labelKey: 'testimonials.labels.events',
       quote: 'Whether it\'s cooking for an intimate dinner for two or for one hundred guests at a big wedding, ' +
         'Chef Desiree is quite famous here in Costa Rica for successfully combining interesting flavors and styles of cooking. ' +
         'She uses her Vietnamese and French heritage mixed with the local Latin ingredients to prepare exotic dishes ' +
         'in a \'Pura Vida\' atmosphere. Her Asian chicken wings are simply the best ever!'
     },
     {
-      label: 'A wedding in January 2023',
+      labelKey: 'testimonials.labels.wedding',
       quote: 'My husband and I chose Desiree to do the catering for our wedding in January 2023 and we were delighted with the results. ' +
         'She is both very experienced and highly imaginative, which made the planning so easy and stress free. ' +
         'On the big day Desiree and her team performed flawlessly. We were thrilled with the food, as were all the guests. ' +
@@ -53,6 +54,7 @@ export class CommentComponent implements OnInit {
   form: NewReview = this.emptyForm();
   submitted = false;
   status: 'idle' | 'sending' | 'sent' | 'error' = 'idle';
+  /** A message from the server, or empty to show the generic translated one. */
   errorMessage = '';
 
   constructor(private reviewService: ReviewService) { }
@@ -86,7 +88,7 @@ export class CommentComponent implements OnInit {
       },
       error: (error: HttpErrorResponse) => {
         this.status = 'error';
-        this.errorMessage = error.error?.error || 'Something went wrong. Please try again in a moment.';
+        this.errorMessage = error.error?.error || '';
       }
     });
   }
