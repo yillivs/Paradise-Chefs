@@ -1,42 +1,299 @@
-/**
-* Controls carousel size
-*/
-.carousel {
-   height: 80vh;
-   width: 100%;
- }
-
-.carousel .carousel-inner {
-   height: 100%;
+:host {
+  display: block;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #1f2a2c;
 }
 
-.carousel-caption{
-  color: black;
+h1, h2, .statement-text {
   font-family: 'Prata', serif;
-  background-color: white;
-  border-color: black;
-  border-style: solid;
-  border-width: .2em;
-  top: 50%;
-  transform: translateY(-50%);
-  bottom: initial;
-
- }
-
-h1{
-   font-size: 1.7em
+  font-weight: 400;
 }
 
-p{
-   font-size: 1.1em
+/* Hero */
+.hero {
+  position: relative;
+  height: calc(100vh - 5.7em);
+  min-height: 30em;
+  overflow: hidden;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
+.hero-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  animation: kenburns 20s ease-out forwards;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.55));
+}
+
+.hero-content {
+  position: relative;
+  padding: 0 1.5em;
+  max-width: 50em;
+}
+
+.hero-eyebrow,
+.hero-title,
+.hero-sub,
+.hero-actions {
+  opacity: 0;
+  animation: fade-up 1s cubic-bezier(0.2, 0.7, 0.2, 1) forwards;
+}
+
+.hero-eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  font-size: 0.95em;
+  margin-bottom: 1em;
+  animation-delay: 0.2s;
+}
+
+.hero-title {
+  font-size: clamp(2.2em, 6vw, 4.2em);
+  line-height: 1.15;
+  margin-bottom: 0.5em;
+  animation-delay: 0.45s;
+}
+
+.hero-sub {
+  font-size: 1.3em;
+  margin-bottom: 1.8em;
+  animation-delay: 0.7s;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation-delay: 0.95s;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 1.5em;
+  left: 50%;
+  width: 1.6em;
+  height: 2.6em;
+  margin-left: -0.8em;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 1em;
+}
+
+.hero-scroll span {
+  position: absolute;
+  top: 0.4em;
+  left: 50%;
+  width: 0.3em;
+  height: 0.5em;
+  margin-left: -0.15em;
+  border-radius: 0.2em;
+  background: #fff;
+  animation: scroll-cue 1.8s ease-in-out infinite;
+}
+
+@keyframes kenburns {
+  from { transform: scale(1); }
+  to { transform: scale(1.12); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes scroll-cue {
+  0% { opacity: 0; transform: translateY(0); }
+  30% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(1em); }
+}
+
+/* Brand statement */
+.statement {
+  background: #faf6ee;
+  padding: 6em 0;
+  text-align: center;
+}
+
+.statement-text {
+  max-width: 28em;
+  margin: 0 auto 1.5em;
+  font-size: clamp(1.5em, 3.4vw, 2.4em);
+  line-height: 1.4;
+}
+
+.statement-rule {
+  display: block;
+  width: 5em;
+  height: 3px;
+  margin: 0 auto;
+  background: #a5bf36;
+  transform: scaleX(0);
+  transition: transform 1s ease 0.25s, opacity 0.9s ease;
+}
+
+.statement-rule.is-visible {
+  transform: scaleX(1);
+}
+
+/* Service tiles */
+.services {
+  padding: 5em 0;
+}
+
+.tile {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.tile-media {
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  margin-bottom: 1.2em;
+}
+
+.tile-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.tile:hover .tile-media img {
+  transform: scale(1.07);
+}
+
+.tile h2 {
+  font-size: 1.6em;
+  margin-bottom: 0.4em;
+}
+
+.tile p {
+  font-size: 1.1em;
+  color: #4a5658;
+}
+
+.tile-link {
+  display: inline-block;
+  font-weight: 700;
+  color: #04646c;
+  border-bottom: 2px solid #a5bf36;
+  transition: letter-spacing 0.3s ease;
+}
+
+.tile:hover .tile-link {
+  letter-spacing: 0.08em;
+}
+
+/* From our kitchen */
+.kitchen {
+  padding: 2em 0 6em;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.2em;
+  margin-bottom: 1.2em;
+}
+
+.kitchen-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  margin-bottom: 2.5em;
+}
+
+.kitchen-grid a {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 1;
+}
+
+.kitchen-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.kitchen-grid a:hover img {
+  transform: scale(1.08);
+}
+
+/* Call to action */
+.cta {
+  background: #04646c;
+  color: #fff;
+  text-align: center;
+  padding: 5em 0;
+}
+
+.cta h2 {
+  font-size: 2.2em;
+  margin-bottom: 0.4em;
+}
+
+.cta p {
+  font-size: 1.2em;
+  margin-bottom: 1.6em;
+}
+
+.cta-button {
+  background: #a5bf36;
+  color: #1f2a2c;
+  font-weight: 700;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #b6cf45;
+  transform: translateY(-3px);
+  box-shadow: 0 0.6em 1.2em rgba(0, 0, 0, 0.25);
+}
 
 @media screen and (max-width: 900px) {
-   
-   img{
-      height: 100vh;
-      width: 100vw;
-      object-fit: cover;
-   }
- }
+  .kitchen-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .statement {
+    padding: 4em 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-image,
+  .hero-scroll span {
+    animation: none;
+  }
+
+  .hero-eyebrow,
+  .hero-title,
+  .hero-sub,
+  .hero-actions {
+    opacity: 1;
+    animation: none;
+  }
+
+  .statement-rule {
+    transform: none;
+    transition: none;
+  }
+
+  .tile-media img,
+  .kitchen-grid img {
+    transition: none;
+  }
+}

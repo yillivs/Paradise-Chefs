@@ -14,6 +14,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { CommentComponent } from './pages/comment/comment.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
+import { RevealDirective } from './shared/reveal.directive';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { GalleryComponent } from './pages/gallery/gallery.component';
     AboutComponent,
     MenuComponent,
     CommentComponent,
-    GalleryComponent
+    GalleryComponent,
+    RevealDirective
   ],
   imports: [
     BrowserModule,
