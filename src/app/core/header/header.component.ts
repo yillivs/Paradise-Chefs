@@ -1,7 +1,10 @@
 import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { TranslocoService } from '@ngneat/transloco';
+import { Observable, Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
+
+import { LANGUAGES, LanguageService } from '../services/language/language.service';
 
 @Component({
   selector: 'app-header',
@@ -11,11 +14,14 @@ import { filter } from 'rxjs/operators';
 export class HeaderComponent implements OnInit, OnDestroy {
 
   links = [
-    { label: 'Home', path: '/home' },
-    { label: 'About Us', path: '/about' },
-    { label: 'Menu', path: '/menu' },
-    { label: 'Testimonials', path: '/comment' }
+    { labelKey: 'nav.home', path: '/home' },
+    { labelKey: 'nav.about', path: '/about' },
+    { labelKey: 'nav.menu', path: '/menu' },
+    { labelKey: 'nav.testimonials', path: '/comment' }
   ];
+
+  languages = LANGUAGES;
+  activeLang$: Observable<string>;
 
   scrolled = false;
   menuOpen = false;
@@ -23,7 +29,13 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   private subscription?: Subscription;
 
-  constructor(private router: Router) { }
+  constructor(
+    private router: Router,
+    private transloco: TranslocoService,
+    private languageService: LanguageService
+  ) {
+    this.activeLang$ = this.transloco.langChanges$;
+  }
 
   ngOnInit() {
     this.subscription = this.router.events
@@ -52,6 +64,10 @@ export class HeaderComponent implements OnInit, OnDestroy {
   toggle() {
     this.menuOpen = !this.menuOpen;
     document.body.style.overflow = this.menuOpen ? 'hidden' : '';
+  }
+
+  setLanguage(lang: string) {
+    this.languageService.set(lang);
   }
 
   close() {

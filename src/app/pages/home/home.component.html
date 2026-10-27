@@ -1,26 +1,24 @@
+<ng-container *transloco="let t">
 <section class="hero">
   <img class="hero-image" src="assets/web/hero-1920.jpg"
        srcset="assets/web/hero-960.jpg 960w, assets/web/hero-1920.jpg 1920w" sizes="100vw"
-       fetchpriority="high" alt="Pozole prepared by Paradise Chefs">
+       fetchpriority="high" [alt]="t('home.hero.imageAlt')">
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Costa Rica</p>
-    <h1 class="hero-title">Fresh, local flavors<br>for every occasion</h1>
-    <p class="hero-sub">From casual to refined, we take care of everything food-related.</p>
+    <p class="hero-eyebrow">{{ t('home.hero.eyebrow') }}</p>
+    <h1 class="hero-title">{{ t('home.hero.titleLine1') }}<br>{{ t('home.hero.titleLine2') }}</h1>
+    <p class="hero-sub">{{ t('home.hero.sub') }}</p>
     <div class="hero-actions">
-      <a class="btn btn-light btn-lg" [routerLink]="['/menu']">See the menu</a>
-      <a class="btn btn-outline-light btn-lg" href="mailto:costadezz@gmail.com">Contact us</a>
+      <a class="btn btn-light btn-lg" [routerLink]="['/menu']">{{ t('home.hero.seeMenu') }}</a>
+      <a class="btn btn-outline-light btn-lg" href="mailto:costadezz@gmail.com">{{ t('home.hero.contact') }}</a>
     </div>
   </div>
-  <a class="hero-scroll" href="#statement" aria-label="Scroll to content"><span></span></a>
+  <a class="hero-scroll" href="#statement" [attr.aria-label]="t('home.hero.scroll')"><span></span></a>
 </section>
 
 <section id="statement" class="statement">
   <div class="container">
-    <p class="statement-text" appReveal>
-      Our obsession is simple: colorful, seasonal, locally sourced ingredients,
-      prepared with love.
-    </p>
+    <p class="statement-text" appReveal>{{ t('home.statement') }}</p>
     <span class="statement-rule" appReveal="250"></span>
   </div>
 </section>
@@ -33,11 +31,11 @@
           <div class="tile-media">
             <img src="assets/web/catering-1000.jpg"
                  srcset="assets/web/catering-600.jpg 600w, assets/web/catering-1000.jpg 1000w"
-                 sizes="(min-width: 768px) 380px, 100vw" alt="Full service catering" loading="lazy">
+                 sizes="(min-width: 768px) 380px, 100vw" [alt]="t('home.services.catering.title')" loading="lazy">
           </div>
-          <h2>Full service catering</h2>
-          <p>From casual to refined, we help you plan your event and take care of all things food.</p>
-          <span class="tile-link">Explore the menu</span>
+          <h2>{{ t('home.services.catering.title') }}</h2>
+          <p>{{ t('home.services.catering.text') }}</p>
+          <span class="tile-link">{{ t('home.services.catering.link') }}</span>
         </a>
       </div>
       <div class="col-md-4" appReveal="150">
@@ -45,11 +43,11 @@
           <div class="tile-media">
             <img src="assets/web/classes-1000.jpg"
                  srcset="assets/web/classes-600.jpg 600w, assets/web/classes-1000.jpg 1000w"
-                 sizes="(min-width: 768px) 380px, 100vw" alt="Cooking classes" loading="lazy">
+                 sizes="(min-width: 768px) 380px, 100vw" [alt]="t('home.services.classes.title')" loading="lazy">
           </div>
-          <h2>Cooking classes</h2>
-          <p>Let us share our knowledge of local ingredients and recipes you can take home.</p>
-          <span class="tile-link">Learn more</span>
+          <h2>{{ t('home.services.classes.title') }}</h2>
+          <p>{{ t('home.services.classes.text') }}</p>
+          <span class="tile-link">{{ t('home.services.classes.link') }}</span>
         </a>
       </div>
       <div class="col-md-4" appReveal="300">
@@ -57,11 +55,11 @@
           <div class="tile-media">
             <img src="assets/web/chefs-1000.jpg"
                  srcset="assets/web/chefs-600.jpg 600w, assets/web/chefs-1000.jpg 1000w"
-                 sizes="(min-width: 768px) 380px, 100vw" alt="Private chefs" loading="lazy">
+                 sizes="(min-width: 768px) 380px, 100vw" [alt]="t('home.services.chefs.title')" loading="lazy">
           </div>
-          <h2>Private chefs</h2>
-          <p>Enjoy your vacation and return to a home cooked meal in the making.</p>
-          <span class="tile-link">Meet the chefs</span>
+          <h2>{{ t('home.services.chefs.title') }}</h2>
+          <p>{{ t('home.services.chefs.text') }}</p>
+          <span class="tile-link">{{ t('home.services.chefs.link') }}</span>
         </a>
       </div>
     </div>
@@ -70,25 +68,26 @@
 
 <section class="kitchen">
   <div class="container">
-    <h2 class="section-title" appReveal>From our kitchen</h2>
+    <h2 class="section-title" appReveal>{{ t('home.kitchen.title') }}</h2>
     <div class="kitchen-grid">
-      <a [routerLink]="['/menu']" appReveal><img src="assets/web/appetizers-800.jpg" alt="Bocas" loading="lazy"></a>
-      <a [routerLink]="['/menu']" appReveal="100"><img src="assets/web/mains-800.jpg" alt="Braised pork" loading="lazy"></a>
-      <a [routerLink]="['/menu']" appReveal="200"><img src="assets/web/desserts-800.jpg" alt="Fruit salad" loading="lazy"></a>
-      <a [routerLink]="['/menu']" appReveal><img src="assets/web/lettuce-wraps-800.jpg" alt="Lettuce wraps" loading="lazy"></a>
-      <a [routerLink]="['/menu']" appReveal="100"><img src="assets/web/sides-800.jpg" alt="A plated meal" loading="lazy"></a>
-      <a [routerLink]="['/menu']" appReveal="200"><img src="assets/web/pasta-800.jpg" alt="A family style meal" loading="lazy"></a>
+      <a [routerLink]="['/menu']" appReveal><img src="assets/web/appetizers-800.jpg" [alt]="t('home.kitchen.alt.appetizers')" loading="lazy"></a>
+      <a [routerLink]="['/menu']" appReveal="100"><img src="assets/web/mains-800.jpg" [alt]="t('home.kitchen.alt.mains')" loading="lazy"></a>
+      <a [routerLink]="['/menu']" appReveal="200"><img src="assets/web/desserts-800.jpg" [alt]="t('home.kitchen.alt.desserts')" loading="lazy"></a>
+      <a [routerLink]="['/menu']" appReveal><img src="assets/web/lettuce-wraps-800.jpg" [alt]="t('home.kitchen.alt.lettuceWraps')" loading="lazy"></a>
+      <a [routerLink]="['/menu']" appReveal="100"><img src="assets/web/sides-800.jpg" [alt]="t('home.kitchen.alt.sides')" loading="lazy"></a>
+      <a [routerLink]="['/menu']" appReveal="200"><img src="assets/web/pasta-800.jpg" [alt]="t('home.kitchen.alt.pasta')" loading="lazy"></a>
     </div>
     <div class="text-center" appReveal>
-      <a class="btn btn-outline-dark btn-lg" [routerLink]="['/menu']">See the menu and photos</a>
+      <a class="btn btn-outline-dark btn-lg" [routerLink]="['/menu']">{{ t('home.kitchen.seeMore') }}</a>
     </div>
   </div>
 </section>
 
 <section class="cta">
   <div class="container" appReveal>
-    <h2>Planning an event?</h2>
-    <p>Tell us what you have in mind and we will take it from there.</p>
-    <a class="btn btn-lg cta-button" href="mailto:costadezz@gmail.com">Contact us at costadezz@gmail.com</a>
+    <h2>{{ t('home.cta.title') }}</h2>
+    <p>{{ t('home.cta.text') }}</p>
+    <a class="btn btn-lg cta-button" href="mailto:costadezz@gmail.com">{{ t('home.cta.button') }}</a>
   </div>
 </section>
+</ng-container>

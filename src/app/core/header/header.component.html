@@ -1,3 +1,4 @@
+<ng-container *transloco="let t">
 <header class="site-header"
         [class.solid]="scrolled || !onHome"
         [class.open]="menuOpen">
@@ -5,23 +6,35 @@
     <img src="assets/ParadiseChefsLogo.png" alt="">
     <span>Paradise Chefs Etc.</span>
   </a>
-  <button class="menu-toggle"
-          type="button"
-          aria-controls="site-menu"
-          [attr.aria-expanded]="menuOpen"
-          (click)="toggle()">
-    <span class="menu-label">{{ menuOpen ? 'Close' : 'Menu' }}</span>
-    <span class="bars" aria-hidden="true"><span></span><span></span></span>
-  </button>
+  <div class="header-actions">
+    <div class="lang-toggle" role="group" [attr.aria-label]="t('nav.language')">
+      <button *ngFor="let lang of languages"
+              type="button"
+              class="lang"
+              [class.active]="lang === (activeLang$ | async)"
+              [attr.aria-pressed]="lang === (activeLang$ | async)"
+              [attr.lang]="lang"
+              (click)="setLanguage(lang)">{{ lang | uppercase }}</button>
+    </div>
+    <button class="menu-toggle"
+            type="button"
+            aria-controls="site-menu"
+            [attr.aria-expanded]="menuOpen"
+            (click)="toggle()">
+      <span class="menu-label">{{ menuOpen ? t('nav.close') : t('nav.open') }}</span>
+      <span class="bars" aria-hidden="true"><span></span><span></span></span>
+    </button>
+  </div>
 </header>
 
 <div id="site-menu" class="overlay" [class.open]="menuOpen" [attr.aria-hidden]="!menuOpen">
-  <nav aria-label="Main">
+  <nav [attr.aria-label]="t('nav.main')">
     <ul>
       <li *ngFor="let link of links; let i = index" [style.--i]="i">
-        <a [routerLink]="[link.path]" routerLinkActive="active">{{ link.label }}</a>
+        <a [routerLink]="[link.path]" routerLinkActive="active">{{ t(link.labelKey) }}</a>
       </li>
     </ul>
   </nav>
   <a class="overlay-contact" href="mailto:costadezz@gmail.com">costadezz&#64;gmail.com</a>
 </div>
+</ng-container>

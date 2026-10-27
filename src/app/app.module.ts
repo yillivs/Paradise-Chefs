@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { TRANSLOCO_CONFIG, TRANSLOCO_LOADER, TranslocoModule, translocoConfig } from '@ngneat/transloco';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { MenuComponent } from './pages/menu/menu.component';
 import { CommentComponent } from './pages/comment/comment.component';
 import { GalleryComponent } from './pages/gallery/gallery.component';
 import { RevealDirective } from './shared/reveal.directive';
+import { TranslocoHttpLoader } from './core/i18n/transloco-loader';
 
 @NgModule({
   declarations: [
@@ -30,9 +32,24 @@ import { RevealDirective } from './shared/reveal.directive';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    TranslocoModule
   ],
-  providers: [],
+  providers: [
+    { provide: TRANSLOCO_LOADER, useClass: TranslocoHttpLoader },
+    {
+      provide: TRANSLOCO_CONFIG,
+      useValue: translocoConfig({
+        availableLangs: ['en', 'es'],
+        defaultLang: 'en',
+        fallbackLang: 'en',
+        reRenderOnLangChange: true,
+        prodMode: !isDevMode(),
+        // Anything not yet translated shows the English text
+        missingHandler: { useFallbackTranslation: true }
+      })
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,11 +1,12 @@
+<ng-container *transloco="let t">
 <section class="menu-hero">
-  <p class="eyebrow">Paradise Chefs Etc.</p>
-  <h1>Our Menu</h1>
-  <p class="menu-sub">Bespoke party foods for small and large gatherings.</p>
+  <p class="eyebrow">{{ t('menu.hero.eyebrow') }}</p>
+  <h1>{{ t('menu.hero.title') }}</h1>
+  <p class="menu-sub">{{ t('menu.hero.sub') }}</p>
 </section>
 
 <div class="tabs-bar">
-  <div class="tabs" role="tablist" aria-label="Menu categories">
+  <div class="tabs" role="tablist" [attr.aria-label]="t('menu.tabsLabel')">
     <button *ngFor="let category of categories; let i = index"
             type="button"
             role="tab"
@@ -17,7 +18,7 @@
             [attr.tabindex]="category === selected ? 0 : -1"
             (click)="select(category)"
             (keydown)="onTabKey($event, i)">
-      {{ category.name }}
+      {{ t('menu.categories.' + category.id + '.name') }}
     </button>
   </div>
 </div>
@@ -28,9 +29,9 @@
       <figure class="photo-stack">
         <img *ngFor="let category of categories"
              [src]="category.photo"
-             [alt]="category.photoAlt"
+             [alt]="t('menu.categories.' + category.id + '.photoAlt')"
              [class.active]="category === selected">
-        <figcaption>{{ selected.caption }}</figcaption>
+        <figcaption>{{ t('menu.categories.' + selected.id + '.caption') }}</figcaption>
       </figure>
     </div>
 
@@ -41,17 +42,17 @@
            [id]="'panel-' + category.id"
            [attr.aria-labelledby]="'tab-' + category.id"
            [class.active]="category === selected">
-        <h2>{{ category.name }}</h2>
+        <h2>{{ t('menu.categories.' + category.id + '.name') }}</h2>
         <ul>
           <li *ngFor="let dish of category.dishes; let i = index" [style.--i]="i">
-            <span class="dish-name">{{ dish.name }}</span>
-            <span *ngIf="dish.detail" class="dish-detail">{{ dish.detail }}</span>
+            <span class="dish-name">{{ t('menu.dishes.' + dish.key + '.name') }}</span>
+            <span *ngIf="dish.detail" class="dish-detail">{{ t('menu.dishes.' + dish.key + '.detail') }}</span>
           </li>
         </ul>
       </div>
 
       <p class="menu-note">
-        Looking for something that is not listed? Tell us what you have in mind.
+        {{ t('menu.note') }}
         <a href="mailto:costadezz@gmail.com">costadezz&#64;gmail.com</a>
       </p>
     </div>
@@ -60,16 +61,16 @@
 
 <section id="photos" class="photos">
   <div class="container">
-    <h2 class="section-title" appReveal>From our kitchen</h2>
+    <h2 class="section-title" appReveal>{{ t('menu.photosTitle') }}</h2>
     <div class="photo-grid">
       <button *ngFor="let photo of photos; let i = index"
               type="button"
               class="photo-tile"
               appReveal
-              [attr.aria-label]="'View photo: ' + photo.caption"
+              [attr.aria-label]="t('menu.viewPhoto', { caption: t('menu.photos.' + photo.id + '.caption') })"
               (click)="open(i)">
-        <img [src]="photo.src" [alt]="photo.alt" loading="lazy">
-        <span class="photo-caption">{{ photo.caption }}</span>
+        <img [src]="photo.src" [alt]="t('menu.photos.' + photo.id + '.alt')" loading="lazy">
+        <span class="photo-caption">{{ t('menu.photos.' + photo.id + '.caption') }}</span>
       </button>
     </div>
   </div>
@@ -79,15 +80,16 @@
      *ngIf="lightboxIndex !== null"
      role="dialog"
      aria-modal="true"
-     aria-label="Photo viewer"
+     [attr.aria-label]="t('menu.viewer.label')"
      (click)="close()">
-  <button type="button" class="lightbox-close" aria-label="Close" (click)="close()">&times;</button>
-  <button type="button" class="lightbox-nav prev" aria-label="Previous photo"
+  <button type="button" class="lightbox-close" [attr.aria-label]="t('menu.viewer.close')" (click)="close()">&times;</button>
+  <button type="button" class="lightbox-nav prev" [attr.aria-label]="t('menu.viewer.previous')"
           (click)="step(-1); $event.stopPropagation()">&#8249;</button>
   <figure (click)="$event.stopPropagation()">
-    <img [src]="photos[lightboxIndex].src" [alt]="photos[lightboxIndex].alt">
-    <figcaption>{{ photos[lightboxIndex].caption }}</figcaption>
+    <img [src]="photos[lightboxIndex].src" [alt]="t('menu.photos.' + photos[lightboxIndex].id + '.alt')">
+    <figcaption>{{ t('menu.photos.' + photos[lightboxIndex].id + '.caption') }}</figcaption>
   </figure>
-  <button type="button" class="lightbox-nav next" aria-label="Next photo"
+  <button type="button" class="lightbox-nav next" [attr.aria-label]="t('menu.viewer.next')"
           (click)="step(1); $event.stopPropagation()">&#8250;</button>
 </div>
+</ng-container>

@@ -18,6 +18,7 @@
     "@angular/platform-browser-dynamic": "~16.0.3",
     "@angular/router": "~16.0.3",
     "@babel/compat-data": "^7.21.9",
+    "@ngneat/transloco": "^5.0.10",
     "ajv": "^7.2.4",
     "bootstrap": "^5.2.3",
     "jasmine": "^5.0.0",

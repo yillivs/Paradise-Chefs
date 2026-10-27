@@ -1,0 +1,233 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "menu": "Menu",
+    "testimonials": "Testimonials",
+    "open": "Menu",
+    "close": "Close",
+    "main": "Main",
+    "language": "Language"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "Costa Rica",
+      "titleLine1": "Fresh, local flavors",
+      "titleLine2": "for every occasion",
+      "sub": "From casual to refined, we take care of everything food-related.",
+      "seeMenu": "See the menu",
+      "contact": "Contact us",
+      "imageAlt": "Pozole prepared by Paradise Chefs",
+      "scroll": "Scroll to content"
+    },
+    "statement": "Our obsession is simple: colorful, seasonal, locally sourced ingredients, prepared with love.",
+    "services": {
+      "catering": {
+        "title": "Full service catering",
+        "text": "From casual to refined, we help you plan your event and take care of all things food.",
+        "link": "Explore the menu"
+      },
+      "classes": {
+        "title": "Cooking classes",
+        "text": "Let us share our knowledge of local ingredients and recipes you can take home.",
+        "link": "Learn more"
+      },
+      "chefs": {
+        "title": "Private chefs",
+        "text": "Enjoy your vacation and return to a home cooked meal in the making.",
+        "link": "Meet the chefs"
+      }
+    },
+    "kitchen": {
+      "title": "From our kitchen",
+      "seeMore": "See the menu and photos",
+      "alt": {
+        "appetizers": "Bocas",
+        "mains": "Braised pork",
+        "desserts": "Fruit salad",
+        "lettuceWraps": "Lettuce wraps",
+        "sides": "A plated meal",
+        "pasta": "A family style meal"
+      }
+    },
+    "cta": {
+      "title": "Planning an event?",
+      "text": "Tell us what you have in mind and we will take it from there.",
+      "button": "Contact us at costadezz@gmail.com"
+    }
+  },
+  "about": {
+    "intro": {
+      "eyebrow": "About Paradise Chefs Etc.",
+      "title": "Great food in Costa Rica, without lifting a finger.",
+      "lead": "We are a Costa Rica catering company offering full service catering, private chefs and cooking classes.",
+      "button": "Email us about your event"
+    },
+    "benefits": {
+      "title": "What we do for you",
+      "party": {
+        "title": "Host the party, enjoy the party",
+        "text": "From an intimate dinner for two to a wedding for one hundred, we plan, shop and cook so you can spend the day with your guests."
+      },
+      "dinner": {
+        "title": "Come home to dinner",
+        "text": "Spend your vacation on the beach or in the jungle and return to a home cooked meal already in the making."
+      },
+      "classes": {
+        "title": "Take the flavors home",
+        "text": "Our family-friendly, hands-on classes teach you local ingredients and recipes you can cook again long after the trip."
+      }
+    },
+    "chefs": {
+      "title": "Your chefs",
+      "desiree": {
+        "tagline": "Meals that taste like where you are",
+        "text": "American, French and Vietnamese, Desiree moved to Costa Rica 30 years ago and blends her background into an inventive fusion of cuisines. She knows where to find the best local seafood and produce, and she is just as happy making old-fashioned comfort favorites.",
+        "alt": "Chef Desiree"
+      },
+      "juan": {
+        "tagline": "Authentic Costa Rican hospitality, from the grill to the glass",
+        "text": "A retired high school horticulture teacher, Juan now spends his time as a chef and bartender. He is a master of the grill and of mixology, so expect a whole fish wrapped in banana leaves or a made-from-scratch Margarita.",
+        "alt": "Chef Juan"
+      }
+    },
+    "proof": {
+      "link": "Read more from our guests"
+    },
+    "cta": {
+      "title": "Ready when you are",
+      "text": "Tell us the occasion, the date and how many people, and we will take it from there."
+    }
+  },
+  "menu": {
+    "hero": {
+      "eyebrow": "Paradise Chefs Etc.",
+      "title": "Our Menu",
+      "sub": "Bespoke party foods for small and large gatherings."
+    },
+    "tabsLabel": "Menu categories",
+    "note": "Looking for something that is not listed? Tell us what you have in mind.",
+    "photosTitle": "From our kitchen",
+    "viewPhoto": "View photo: {{ caption }}",
+    "viewer": {
+      "label": "Photo viewer",
+      "close": "Close",
+      "previous": "Previous photo",
+      "next": "Next photo"
+    },
+    "categories": {
+      "appetizers": {
+        "name": "Appetizers",
+        "caption": "Asian-inspired appetizers.",
+        "photoAlt": "Asian-inspired appetizers served on spoons"
+      },
+      "soups": {
+        "name": "Soups",
+        "caption": "Red pozole with fresh toppings.",
+        "photoAlt": "A bowl of red pozole topped with cheese, radish and cilantro"
+      },
+      "salads": {
+        "name": "Salads",
+        "caption": "Garden salad reception starter.",
+        "photoAlt": "Garden salad in a lettuce cup with cherry tomatoes and cucumber"
+      },
+      "mains": {
+        "name": "Main Courses",
+        "caption": "Coffee crusted pork tenderloin.",
+        "photoAlt": "Sliced coffee crusted pork tenderloin"
+      },
+      "pasta": {
+        "name": "Pasta",
+        "caption": "Bespoke party foods for small and large gatherings.",
+        "photoAlt": "A spread of party foods on a long table"
+      },
+      "sides": {
+        "name": "Side Dishes",
+        "caption": "Bespoke party foods for small and large gatherings.",
+        "photoAlt": "A table of appetizers, steamed rice and pickled avocado"
+      },
+      "desserts": {
+        "name": "Desserts",
+        "caption": "Tropical fruit platter.",
+        "photoAlt": "A platter of tropical fruit"
+      }
+    },
+    "dishes": {
+      "quesadillas": { "name": "Quesadillas", "detail": "Chipotle flavored chicken, pico de gallo, and guacamole" },
+      "shrimpCocktail": { "name": "Shrimp cocktail", "detail": "Classic horseradish cocktail sauce" },
+      "nolaShrimp": { "name": "New Orleans style shrimp rémoulade", "detail": "Served on a mixed raw veggie salad" },
+      "chickenSate": { "name": "Indonesian chicken saté skewers", "detail": "Peanut sauce" },
+      "springRolls": { "name": "Fresh or crispy spring rolls", "detail": "Sushi maki and dipping sauces" },
+      "ahiTuna": { "name": "Seared ahi tuna", "detail": "Wasabi and soy sauce" },
+      "frenchOnion": { "name": "French onion soup" },
+      "thaiSoup": { "name": "Thai coconut-lemongrass chicken soup" },
+      "gumbo": { "name": "Creole gumbo", "detail": "Chicken and seafood" },
+      "sopaNegra": { "name": "Sopa negra", "detail": "Costa Rican black bean soup served with avocado, egg, and cheese toppings" },
+      "caesar": { "name": "Caesar salad", "detail": "Herbed croutons, with optional grilled chicken or fish addition" },
+      "frisee": { "name": "Frisée salad", "detail": "Bacon pieces, cheese, vinaigrette and toasted nuts" },
+      "mixedSalads": { "name": "Mixed tossed salads", "detail": "Balsamic vinaigrette, buttermilk ranch, French, honey mustard, or green goddess" },
+      "tenderloinSteak": { "name": "Grilled tenderloin steak", "detail": "Choice of green peppercorn, red wine and shallot, mushroom sherry, or béarnaise sauce" },
+      "seafoodGrill": { "name": "Grilled mahi mahi fillet, tuna steak, jumbo shrimp or lobster tail", "detail": "Cooked in varying combinations" },
+      "chickenCurries": { "name": "Hungarian chicken paprika or Indian chicken masala" },
+      "lemonChicken": { "name": "Lemon-rosemary chicken" },
+      "porkTenderloin": { "name": "Pork tenderloin", "detail": "White wine and fennel sauce" },
+      "pastaSauces": { "name": "Spaghetti, fettuccini, or penne", "detail": "White sauce (Alfredo) or tomato (Marinara) sauce, with optional meat or seafood additions" },
+      "lasagna": { "name": "Vegetarian or meat lasagna" },
+      "potatoes": { "name": "Twice baked or scalloped potatoes" },
+      "rice": { "name": "Steamed rice" },
+      "orzo": { "name": "Orzo with mint" },
+      "couscous": { "name": "Couscous with vegetables" },
+      "vegetables": { "name": "Steamed or sautéed vegetables", "detail": "Of the season" },
+      "bananasFlambee": { "name": "Bananas flambée", "detail": "With rum and ice cream" },
+      "tresLeches": { "name": "Tres leches" },
+      "fruitSalad": { "name": "Tropical fruit salad", "detail": "With ice cream" },
+      "pies": { "name": "Pies, cheesecake, and cakes", "detail": "Available upon request for special occasions" }
+    },
+    "photos": {
+      "appetizers": { "alt": "Asian-inspired appetizers on spoons", "caption": "Asian-inspired appetizers." },
+      "lettuceWraps": { "alt": "Lettuce wraps", "caption": "Lettuce wraps." },
+      "soups": { "alt": "Red pozole", "caption": "Red pozole with fresh toppings." },
+      "salads": { "alt": "Garden salad", "caption": "Garden salad reception starter." },
+      "mains": { "alt": "Coffee crusted pork tenderloin", "caption": "Coffee crusted pork tenderloin." },
+      "caprese": { "alt": "Tomato and mozzarella salad", "caption": "Tomato, basil and mozzarella." },
+      "bocas2": { "alt": "Appetizer spoons on a banana leaf", "caption": "Appetizers on banana leaf." },
+      "sides": { "alt": "A table of party foods", "caption": "Bespoke party foods for small and large gatherings." },
+      "desserts": { "alt": "Tropical fruit platter", "caption": "Tropical fruit platter to start the day." }
+    }
+  },
+  "testimonials": {
+    "intro": {
+      "eyebrow": "Testimonials",
+      "title": "Kind words from our guests"
+    },
+    "labels": {
+      "vacation": "A vacation in Costa Rica",
+      "family": "A family holiday",
+      "events": "Events of every size",
+      "wedding": "A wedding in January 2023"
+    },
+    "moreTitle": "More from our guests",
+    "ratingOutOf": "{{ rating }} out of 5 stars",
+    "form": {
+      "title": "Share your experience",
+      "intro": "Cooked for by Paradise Chefs? Tell us how it went.",
+      "thanks": "Thank you! Your review has been received.",
+      "name": "Your name",
+      "nameError": "Please enter your name.",
+      "rating": "Your rating",
+      "star": "1 star",
+      "stars": "{{ count }} stars",
+      "ratingError": "Please choose a rating.",
+      "comment": "Your review",
+      "commentError": "Please write a few words about your experience.",
+      "honeypot": "Leave this field empty",
+      "send": "Send review",
+      "sending": "Sending…",
+      "genericError": "Something went wrong. Please try again in a moment."
+    },
+    "cta": {
+      "title": "Your event could be next",
+      "text": "Tell us the occasion, the date and how many people, and we will take it from there."
+    }
+  }
+}

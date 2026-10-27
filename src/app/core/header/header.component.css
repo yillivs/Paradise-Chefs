@@ -48,6 +48,48 @@
   width: auto;
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.6em;
+}
+
+.lang-toggle {
+  display: flex;
+  align-items: center;
+}
+
+.lang {
+  padding: 0.3em 0.6em;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  opacity: 0.6;
+  cursor: pointer;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 0.85em;
+  letter-spacing: 0.2em;
+  transition: opacity 0.3s ease;
+}
+
+.lang + .lang {
+  border-left: 1px solid currentColor;
+}
+
+.lang:hover,
+.lang.active {
+  opacity: 1;
+}
+
+.lang.active {
+  font-weight: 700;
+}
+
+.lang:focus-visible {
+  outline: 2px solid #a5bf36;
+  outline-offset: 2px;
+}
+
 .menu-toggle {
   display: flex;
   align-items: center;
